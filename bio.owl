@@ -1,0 +1,757 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE Ontology [
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/marcos/ingonto"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     ontologyIRI="http://www.semanticweb.org/marcos/ingonto">
+    <Prefix name="" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="dbo" IRI="http://dbpedia.org/ontology/"/>
+    <Prefix name="dwc" IRI="http://rs.tdwg.org/dwc/terms/"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="foaf" IRI="http://xmlns.com/foaf/0.1/"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="dcterms" IRI="http://purl.org/dc/terms/"/>
+    <Prefix name="ingonto" IRI="http://www.semanticweb.org/marcos/ingonto"/>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Ontologia creada para el curso de posgrado &quot;introduccion a la ingenieria ontologica UNPSJB&quot; la misma se utliza para describir recursos de biodiversidad, en particular las instancias creadas se utilizan para descrbir observaciones de Elefantes Marinos del Sur (EMS) durante su migracion realizada en el oceano atlantico sur.
+
+Esta ontologia permite describir otros recursos de biodiversidad (colecciones en museos, observaciones de especies, etc) debido a que utiliza el standar Darwin Core para compartir datos sobre biodiversidad que sean complementarios y reutilice estándares de metadatos de otros dominios como Dublin core</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/creator"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Marcos Zarate</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">1.0</Literal>
+    </Annotation>
+    <Declaration>
+        <Class abbreviatedIRI="dcterms:Location"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="dwc:Event"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="dwc:Identification"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="dwc:Occurrence"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="dwc:Organism"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="dwc:Taxon"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Muestra"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="foaf:Agent"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#derivadoDe"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#enEvento"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#esBaseParaIdentificacion"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#eventoDe"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#evidenciaPara"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#georeferenciadoPor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#identifica"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#identificaTaxon"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#identificacionBasadaEn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#identificadoPor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#localiza"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#ocurrenciaDe"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#recolectadoPor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#situadoEn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#taxonDeIdentificacion"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#tieneDerivado"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#tieneEvidencia"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#tieneIdentificacion"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#tieneOcurrencia"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="dbo:wikiPageID"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="dwc:basisOfRecord"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="dwc:country"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="dwc:countryCode"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="dwc:decimalLatitude"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="dwc:decimalLongitude"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="dwc:samplingProtocol"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="dwc:scientificName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="dwc:scientificNameAuthorship"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="dwc:taxonID"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="dwc:vernacularName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="dwc:waterBody"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="foaf:depiction"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#180671"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#327173773"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#471888"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Biologgin"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#georeferencia"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#muestra1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#pv01"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#srdl"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/creator"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
+    </Declaration>
+    <DisjointClasses>
+        <Class abbreviatedIRI="dcterms:Location"/>
+        <Class abbreviatedIRI="dwc:Event"/>
+        <Class abbreviatedIRI="dwc:Identification"/>
+        <Class abbreviatedIRI="dwc:Occurrence"/>
+        <Class abbreviatedIRI="dwc:Organism"/>
+        <Class abbreviatedIRI="dwc:Taxon"/>
+        <Class IRI="#Muestra"/>
+        <Class abbreviatedIRI="foaf:Agent"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class abbreviatedIRI="dwc:Taxon"/>
+        <NamedIndividual IRI="#180671"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="dwc:Occurrence"/>
+        <NamedIndividual IRI="#327173773"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="dwc:Identification"/>
+        <NamedIndividual IRI="#471888"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="dwc:Event"/>
+        <NamedIndividual IRI="#Biologgin"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="dcterms:Location"/>
+        <NamedIndividual IRI="#georeferencia"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Muestra"/>
+        <NamedIndividual IRI="#muestra1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="dwc:Organism"/>
+        <NamedIndividual IRI="#pv01"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="foaf:Agent"/>
+        <NamedIndividual IRI="#srdl"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#enEvento"/>
+        <NamedIndividual IRI="#327173773"/>
+        <NamedIndividual IRI="#Biologgin"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ocurrenciaDe"/>
+        <NamedIndividual IRI="#327173773"/>
+        <NamedIndividual IRI="#pv01"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#recolectadoPor"/>
+        <NamedIndividual IRI="#327173773"/>
+        <NamedIndividual IRI="#srdl"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneEvidencia"/>
+        <NamedIndividual IRI="#327173773"/>
+        <NamedIndividual IRI="#muestra1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#identifica"/>
+        <NamedIndividual IRI="#471888"/>
+        <NamedIndividual IRI="#pv01"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#identificaTaxon"/>
+        <NamedIndividual IRI="#471888"/>
+        <NamedIndividual IRI="#180671"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#situadoEn"/>
+        <NamedIndividual IRI="#Biologgin"/>
+        <NamedIndividual IRI="#georeferencia"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#georeferenciadoPor"/>
+        <NamedIndividual IRI="#georeferencia"/>
+        <NamedIndividual IRI="#srdl"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#esBaseParaIdentificacion"/>
+        <NamedIndividual IRI="#muestra1"/>
+        <NamedIndividual IRI="#471888"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty abbreviatedIRI="dbo:wikiPageID"/>
+        <NamedIndividual IRI="#180671"/>
+        <Literal datatypeIRI="&xsd;integer">20598100</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty abbreviatedIRI="dwc:scientificName"/>
+        <NamedIndividual IRI="#180671"/>
+        <Literal datatypeIRI="&rdfs;Literal">Mirounga leonina (Linnaeus, 1758)</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty abbreviatedIRI="dwc:scientificNameAuthorship"/>
+        <NamedIndividual IRI="#180671"/>
+        <Literal datatypeIRI="&rdfs;Literal">(Linnaeus, 1758)</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty abbreviatedIRI="dwc:taxonID"/>
+        <NamedIndividual IRI="#180671"/>
+        <Literal datatypeIRI="&xsd;anyURI">http://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&amp;search_value=180671</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty abbreviatedIRI="dwc:vernacularName"/>
+        <NamedIndividual IRI="#180671"/>
+        <Literal datatypeIRI="&rdfs;Literal">Elefante Marino del Sur</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty abbreviatedIRI="foaf:depiction"/>
+        <NamedIndividual IRI="#180671"/>
+        <Literal datatypeIRI="&xsd;anyURI">https://upload.wikimedia.org/wikipedia/commons/e/ed/Mirounga_leonina_male.JPG</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty abbreviatedIRI="dwc:basisOfRecord"/>
+        <NamedIndividual IRI="#327173773"/>
+        <Literal datatypeIRI="&xsd;anyURI">http://rs.tdwg.org/dwc/dwctype/HumanObservation</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty abbreviatedIRI="dwc:samplingProtocol"/>
+        <NamedIndividual IRI="#Biologgin"/>
+        <Literal datatypeIRI="&xsd;anyURI">http://jmammal.oxfordjournals.org/content/80/4/1341.abstract</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty abbreviatedIRI="dwc:country"/>
+        <NamedIndividual IRI="#georeferencia"/>
+        <Literal datatypeIRI="&xsd;string">Argentina</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty abbreviatedIRI="dwc:countryCode"/>
+        <NamedIndividual IRI="#georeferencia"/>
+        <Literal datatypeIRI="&xsd;string">AR</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty abbreviatedIRI="dwc:decimalLatitude"/>
+        <NamedIndividual IRI="#georeferencia"/>
+        <Literal datatypeIRI="&xsd;decimal">-49759998</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty abbreviatedIRI="dwc:decimalLongitude"/>
+        <NamedIndividual IRI="#georeferencia"/>
+        <Literal datatypeIRI="&xsd;decimal">-67725998</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty abbreviatedIRI="dwc:waterBody"/>
+        <NamedIndividual IRI="#georeferencia"/>
+        <Literal datatypeIRI="&rdfs;Literal">Oceando Atlantico Sur</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty abbreviatedIRI="foaf:depiction"/>
+        <NamedIndividual IRI="#muestra1"/>
+        <Literal datatypeIRI="&xsd;anyURI">https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYSaA9OMb7vn4d928ZExMy8yf5dH0_E6fzai6XQffK7dcTkkge</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty abbreviatedIRI="foaf:depiction"/>
+        <NamedIndividual IRI="#srdl"/>
+        <Literal datatypeIRI="&xsd;anyURI">http://www.meop.net/_Media/tag_med-3.png</Literal>
+    </DataPropertyAssertion>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#tieneDerivado"/>
+        <ObjectProperty IRI="#derivadoDe"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#eventoDe"/>
+        <ObjectProperty IRI="#enEvento"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#identificacionBasadaEn"/>
+        <ObjectProperty IRI="#esBaseParaIdentificacion"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#evidenciaPara"/>
+        <ObjectProperty IRI="#tieneEvidencia"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#tieneIdentificacion"/>
+        <ObjectProperty IRI="#identifica"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#identificaTaxon"/>
+        <ObjectProperty IRI="#taxonDeIdentificacion"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#localiza"/>
+        <ObjectProperty IRI="#situadoEn"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#tieneOcurrencia"/>
+        <ObjectProperty IRI="#ocurrenciaDe"/>
+    </InverseObjectProperties>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#derivadoDe"/>
+    </TransitiveObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#enEvento"/>
+        <Class abbreviatedIRI="dwc:Occurrence"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#esBaseParaIdentificacion"/>
+        <Class IRI="#Muestra"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#eventoDe"/>
+        <Class abbreviatedIRI="dwc:Event"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#evidenciaPara"/>
+        <Class IRI="#Muestra"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#georeferenciadoPor"/>
+        <Class abbreviatedIRI="dcterms:Location"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#identifica"/>
+        <Class abbreviatedIRI="dwc:Identification"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#identificaTaxon"/>
+        <Class abbreviatedIRI="dwc:Identification"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#identificacionBasadaEn"/>
+        <Class abbreviatedIRI="dwc:Identification"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#identificadoPor"/>
+        <Class abbreviatedIRI="dwc:Identification"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#localiza"/>
+        <Class abbreviatedIRI="dcterms:Location"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#ocurrenciaDe"/>
+        <Class abbreviatedIRI="dwc:Occurrence"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#recolectadoPor"/>
+        <Class abbreviatedIRI="dwc:Occurrence"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#situadoEn"/>
+        <Class abbreviatedIRI="dwc:Event"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#taxonDeIdentificacion"/>
+        <Class abbreviatedIRI="dwc:Taxon"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#tieneDerivado"/>
+        <Class abbreviatedIRI="dwc:Organism"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#tieneEvidencia"/>
+        <Class abbreviatedIRI="dwc:Occurrence"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#tieneIdentificacion"/>
+        <Class abbreviatedIRI="dwc:Organism"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#tieneOcurrencia"/>
+        <Class abbreviatedIRI="dwc:Organism"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#derivadoDe"/>
+        <Class abbreviatedIRI="dwc:Organism"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#enEvento"/>
+        <Class abbreviatedIRI="dwc:Event"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#esBaseParaIdentificacion"/>
+        <Class abbreviatedIRI="dwc:Identification"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#eventoDe"/>
+        <Class abbreviatedIRI="dwc:Occurrence"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#evidenciaPara"/>
+        <Class abbreviatedIRI="dwc:Occurrence"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#georeferenciadoPor"/>
+        <Class abbreviatedIRI="foaf:Agent"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#identifica"/>
+        <Class abbreviatedIRI="dwc:Organism"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#identificaTaxon"/>
+        <Class abbreviatedIRI="dwc:Taxon"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#identificacionBasadaEn"/>
+        <Class IRI="#Muestra"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#identificadoPor"/>
+        <Class abbreviatedIRI="foaf:Agent"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#localiza"/>
+        <Class abbreviatedIRI="dwc:Event"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#ocurrenciaDe"/>
+        <Class abbreviatedIRI="dwc:Organism"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#recolectadoPor"/>
+        <Class abbreviatedIRI="foaf:Agent"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#situadoEn"/>
+        <Class abbreviatedIRI="dcterms:Location"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#taxonDeIdentificacion"/>
+        <Class abbreviatedIRI="dwc:Identification"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#tieneEvidencia"/>
+        <Class IRI="#Muestra"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#tieneIdentificacion"/>
+        <Class abbreviatedIRI="dwc:Identification"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#tieneOcurrencia"/>
+        <Class abbreviatedIRI="dwc:Occurrence"/>
+    </ObjectPropertyRange>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="dbo:wikiPageID"/>
+        <Class abbreviatedIRI="dwc:Taxon"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="dwc:basisOfRecord"/>
+        <Class abbreviatedIRI="dwc:Occurrence"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="dwc:country"/>
+        <Class abbreviatedIRI="dcterms:Location"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="dwc:countryCode"/>
+        <Class abbreviatedIRI="dcterms:Location"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="dwc:decimalLatitude"/>
+        <Class abbreviatedIRI="dcterms:Location"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="dwc:decimalLongitude"/>
+        <Class abbreviatedIRI="dcterms:Location"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="dwc:samplingProtocol"/>
+        <Class abbreviatedIRI="dwc:Event"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="dwc:scientificName"/>
+        <Class abbreviatedIRI="dwc:Taxon"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="dwc:scientificNameAuthorship"/>
+        <Class abbreviatedIRI="dwc:Taxon"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="dwc:taxonID"/>
+        <Class abbreviatedIRI="dwc:Taxon"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="dwc:vernacularName"/>
+        <Class abbreviatedIRI="dwc:Taxon"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="dwc:waterBody"/>
+        <Class abbreviatedIRI="dcterms:Location"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="dbo:wikiPageID"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="dwc:basisOfRecord"/>
+        <Datatype abbreviatedIRI="xsd:anyURI"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="dwc:country"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="dwc:countryCode"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="dwc:samplingProtocol"/>
+        <Datatype abbreviatedIRI="xsd:anyURI"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="dwc:scientificName"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="dwc:scientificNameAuthorship"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="dwc:taxonID"/>
+        <Datatype abbreviatedIRI="xsd:anyURI"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="dwc:vernacularName"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="dwc:waterBody"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="foaf:depiction"/>
+        <Datatype abbreviatedIRI="xsd:anyURI"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>dcterms:Location</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Geografía, descripciones de la localidad, datos espaciales</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>dwc:Event</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">La categoría de información relativa a un evento (una acción que ocurre en un lugar y durante un tiempo)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>dwc:Identification</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Asociación entre Taxón y Registro biológico</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>dwc:Organism</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Evidencia de la especie en la naturaleza, observadores, comportamiento, medios asociados, referencias</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>dwc:Taxon</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Nombres científicos, nombres comunes, usos de nombres, conceptos del taxón, y la relación entre ellos</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>dwc:basisOfRecord</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">La naturaleza específica del registro de datos. Se recomienda el uso del vocabulario controlado Base del Registro.
+Ejemplos: &quot;Espécimen Preservado&quot;, &quot;Espécimen Fósil&quot;, &quot;Espécimen Vivo&quot;,
+&quot;Observación Humana&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>dwc:country</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">El nombre del país o unidad administrativa de mayor jerarquía de la ubicación. Se recomienda utilizar un identificador persistente de un vocabulario controlado como el Tesauro Getty de Nombres Geográficos o la norma ISO 3166.
+Ejemplos: &quot;Dinamarca&quot;, &quot;Colombia&quot;, &quot;España&quot;.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>dwc:countryCode</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">El código estándar para el país de la ubicación. Se recomienda el uso de la
+norma ISO 3166-1-alfa-2 de códigos de países.
+Ejemplos: &quot;AR&quot; para Argentina, &quot;CO&quot; para Colombia</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>dwc:decimalLatitude</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">La latitud geográfica (en grados decimales, utilizando el sistema de referencia espacial provisto en Datum geodésico) del centro geográfico de una ubicación.
+Los valores positivos se encuentran al norte del ecuador, los valores negativos están al sur del mismo. Los valores admitidos se encuentran entre -90 y 90, ambos incluidos.
+Ejemplo: &quot;-41.0983423&quot;.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>dwc:decimalLongitude</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">La longitud geográfica (en grados decimales, mediante el sistema de referencia espacial provisto en Datum geodésico) del centro geográfico de una ubicación.
+Los valores positivos se encuentran al este del meridiano de Greenwich, los valores negativos se encuentran al oeste de la misma. Los valores admitidos se encuentran entre -180 y 180, ambos incluidos.
+Ejemplo: &quot;-121.1761111&quot;.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>dwc:samplingProtocol</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">El nombre de, la referencia a, o la descripción del método o protocolo usado durante el Evento.
+Ejemplos: &quot;Trampa de luz UV&quot;, &quot;Red de niebla&quot;, “Arrastre de fondo”,
+&quot;Observación ad hoc&quot;, &quot;Punto de conteo&quot;,</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>dwc:scientificName</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">El nombre científico completo, con información de autoría y fecha si se conoce. Al formar parte de una identificación, este debe ser el nombre en la categoría del taxón de menor nivel que pueda ser determinado. Este elemento no debe contener calificadores de identificación, estos deberían ser suministrados en el elemento Calificador de la identificación.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>dwc:scientificNameAuthorship</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">La información de autoría del Nombre científico formateado de acuerdo a las convenciones del Código Nomenclatural aplicable.
+Ejemplos: &quot;(Torr.) J.T. Howell&quot;, &quot;(Martinovský) Tzvelev&quot;, &quot;(Györfi, 1952)&quot;.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>dwc:taxonID</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Un identificador para el conjunto de información del taxón (datos asociados a la clase del Taxón). Puede ser un identificador único global o un identificador específico para el conjunto de datos.
+Ejemplos: &quot;8fa58e08-08de-4ac1-b69c-1235340b7001&quot;, &quot;32567&quot;,
+&quot;http://species.gbif.org/abies_alba_1753&quot;, &quot;urn:lsid:gbif.org:usages:32567&quot;.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>dwc:waterBody</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">El nombre del cuerpo de agua en que tiene lugar la Ubicación. Se recomienda el uso de un vocabulario controlado, como el Tesauro Getty de Nombres Geográficos.
+Ejemplos: &quot;Océano Pacífico&quot;, &quot;Mar Caribe&quot;.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#180671</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Instancia de Taxon, categoría de información relativa a nombres taxonómicos, uso de nombres taxonómicos o conceptos taxonómicos </Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#327173773</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">identificador de la ocurrencia, en este caso corresponde al ID de registro tomado por un instrumento que llevaba un elefante marino adherido a su cuerpo.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#471888</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Identificacion unica de la especi dentro de obis, esta instancia se asocia con la clase taxon  y organism</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Muestra</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Una muestra puede ser una parte del organismo o el Organismo en sí mismo (en la vida o como una muestra). También puede ser una imagen, sonido, secuencia de ADN, o la observación humana o la que realizo una máquina.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#georeferencia</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Instancia que permite asociar los valores de georeferenciacion asociados a una determinada ocurrencia</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#srdl</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">An agent (eg. person, group, software or physical artifact). 
+en este caso el agente que georeferencia es un equipo denominado SRDL por sus siglas en ingles SATELLITAL RELAY DATA LOGGERS</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>foaf:Agent</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Un agente (ej. persona, grupo, software o artefacto físico).</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+
