@@ -1,0 +1,526 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.cenpat-conicet.gob.ar/ontology/"
+     xml:base="http://www.cenpat-conicet.gob.ar/ontology/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:wdt="http://wikidata.org/prop/direct/"
+     xmlns:bio-onto="http://www.cenpat-conicet.gob.ar/ontology/"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:wd="http://www.wikidata.org/entity/"
+     xmlns:dwc="http://rs.tdwg.org/dwc/terms/"
+     xmlns:geo-ont="http://www.geonames.org/ontology#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:geo-pos="http://www.w3.org/2003/01/geo/wgs84_pos#"
+     xmlns:dbr="http://dbpedia.org/resource/"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/">
+    <owl:Ontology rdf:about="http://www.cenpat-conicet.gob.ar/ontology/"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://rs.tdwg.org/dwc/terms/georeferenceRemarks -->
+
+    <owl:AnnotationProperty rdf:about="http://rs.tdwg.org/dwc/terms/georeferenceRemarks"/>
+    
+
+
+    <!-- http://wikidata.org/prop/direct/p21 -->
+
+    <owl:AnnotationProperty rdf:about="http://wikidata.org/prop/direct/p21"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/name -->
+
+    <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/name"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.cenpat-conicet.gob.ar/ontology/R_Elephant -->
+
+    <owl:ObjectProperty rdf:about="http://www.cenpat-conicet.gob.ar/ontology/R_Elephant"/>
+    
+
+
+    <!-- http://www.cenpat-conicet.gob.ar/ontology/R_Lanternfish -->
+
+    <owl:ObjectProperty rdf:about="http://www.cenpat-conicet.gob.ar/ontology/R_Lanternfish"/>
+    
+
+
+    <!-- http://www.cenpat-conicet.gob.ar/ontology/event_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.cenpat-conicet.gob.ar/ontology/event_of">
+        <owl:inverseOf rdf:resource="http://www.cenpat-conicet.gob.ar/ontology/has_event"/>
+        <rdfs:domain rdf:resource="http://rs.tdwg.org/dwc/terms/Event"/>
+        <rdfs:range rdf:resource="http://rs.tdwg.org/dwc/terms/Occurrence"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cenpat-conicet.gob.ar/ontology/has_event -->
+
+    <owl:ObjectProperty rdf:about="http://www.cenpat-conicet.gob.ar/ontology/has_event">
+        <rdfs:domain rdf:resource="http://rs.tdwg.org/dwc/terms/Occurrence"/>
+        <rdfs:range rdf:resource="http://rs.tdwg.org/dwc/terms/Event"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cenpat-conicet.gob.ar/ontology/has_location -->
+
+    <owl:ObjectProperty rdf:about="http://www.cenpat-conicet.gob.ar/ontology/has_location">
+        <owl:inverseOf rdf:resource="http://www.cenpat-conicet.gob.ar/ontology/location_of"/>
+        <rdfs:domain rdf:resource="http://rs.tdwg.org/dwc/terms/Event"/>
+        <rdfs:range rdf:resource="http://purl.org/dc/terms/Location"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cenpat-conicet.gob.ar/ontology/has_taxon -->
+
+    <owl:ObjectProperty rdf:about="http://www.cenpat-conicet.gob.ar/ontology/has_taxon">
+        <owl:inverseOf rdf:resource="http://www.cenpat-conicet.gob.ar/ontology/taxon_of"/>
+        <rdfs:domain rdf:resource="http://rs.tdwg.org/dwc/terms/Occurrence"/>
+        <rdfs:range rdf:resource="http://rs.tdwg.org/dwc/terms/Taxon"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cenpat-conicet.gob.ar/ontology/institution_code -->
+
+    <owl:ObjectProperty rdf:about="http://www.cenpat-conicet.gob.ar/ontology/institution_code">
+        <rdfs:domain rdf:resource="http://rs.tdwg.org/dwc/terms/Occurrence"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cenpat-conicet.gob.ar/ontology/into_eez -->
+
+    <owl:ObjectProperty rdf:about="http://www.cenpat-conicet.gob.ar/ontology/into_eez">
+        <rdfs:domain rdf:resource="http://purl.org/dc/terms/Location"/>
+        <rdfs:range rdf:resource="http://www.cenpat-conicet.gob.ar/ontology/Region"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cenpat-conicet.gob.ar/ontology/is_part_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.cenpat-conicet.gob.ar/ontology/is_part_of">
+        <rdfs:domain rdf:resource="http://rs.tdwg.org/dwc/terms/dataset"/>
+        <rdfs:range rdf:resource="http://rs.tdwg.org/dwc/terms/Occurrence"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cenpat-conicet.gob.ar/ontology/location_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.cenpat-conicet.gob.ar/ontology/location_of">
+        <rdfs:domain rdf:resource="http://purl.org/dc/terms/Location"/>
+        <rdfs:range rdf:resource="http://rs.tdwg.org/dwc/terms/Event"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cenpat-conicet.gob.ar/ontology/recorded_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.cenpat-conicet.gob.ar/ontology/recorded_by">
+        <rdfs:domain rdf:resource="http://rs.tdwg.org/dwc/terms/Occurrence"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cenpat-conicet.gob.ar/ontology/taxon_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.cenpat-conicet.gob.ar/ontology/taxon_of">
+        <rdfs:domain rdf:resource="http://rs.tdwg.org/dwc/terms/Taxon"/>
+        <rdfs:range rdf:resource="http://rs.tdwg.org/dwc/terms/Occurrence"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cenpat-conicet.gob.ar/ontology/#is_predator_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.cenpat-conicet.gob.ar/ontology/#is_predator_of">
+        <owl:inverseOf rdf:resource="http://www.cenpat-conicet.gob.ar/ontology/#is_prey_of"/>
+        <rdfs:domain rdf:resource="http://rs.tdwg.org/dwc/terms/Taxon"/>
+        <rdfs:range rdf:resource="http://rs.tdwg.org/dwc/terms/Taxon"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.cenpat-conicet.gob.ar/ontology/R_Elephant"/>
+            <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+            <rdf:Description rdf:about="http://www.cenpat-conicet.gob.ar/ontology/R_Lanternfish"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cenpat-conicet.gob.ar/ontology/#is_prey_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.cenpat-conicet.gob.ar/ontology/#is_prey_of"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://rs.tdwg.org/dwc/terms/basisOfRecord -->
+
+    <owl:DatatypeProperty rdf:about="http://rs.tdwg.org/dwc/terms/basisOfRecord"/>
+    
+
+
+    <!-- http://rs.tdwg.org/dwc/terms/catalogNumber -->
+
+    <owl:DatatypeProperty rdf:about="http://rs.tdwg.org/dwc/terms/catalogNumber"/>
+    
+
+
+    <!-- http://rs.tdwg.org/dwc/terms/class -->
+
+    <owl:DatatypeProperty rdf:about="http://rs.tdwg.org/dwc/terms/class"/>
+    
+
+
+    <!-- http://rs.tdwg.org/dwc/terms/collectionCode -->
+
+    <owl:DatatypeProperty rdf:about="http://rs.tdwg.org/dwc/terms/collectionCode"/>
+    
+
+
+    <!-- http://rs.tdwg.org/dwc/terms/country -->
+
+    <owl:DatatypeProperty rdf:about="http://rs.tdwg.org/dwc/terms/country"/>
+    
+
+
+    <!-- http://rs.tdwg.org/dwc/terms/decimalLatitude -->
+
+    <owl:DatatypeProperty rdf:about="http://rs.tdwg.org/dwc/terms/decimalLatitude"/>
+    
+
+
+    <!-- http://rs.tdwg.org/dwc/terms/decimalLongitude -->
+
+    <owl:DatatypeProperty rdf:about="http://rs.tdwg.org/dwc/terms/decimalLongitude"/>
+    
+
+
+    <!-- http://rs.tdwg.org/dwc/terms/eventDate -->
+
+    <owl:DatatypeProperty rdf:about="http://rs.tdwg.org/dwc/terms/eventDate"/>
+    
+
+
+    <!-- http://rs.tdwg.org/dwc/terms/family -->
+
+    <owl:DatatypeProperty rdf:about="http://rs.tdwg.org/dwc/terms/family">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://rs.tdwg.org/dwc/terms/genus -->
+
+    <owl:DatatypeProperty rdf:about="http://rs.tdwg.org/dwc/terms/genus"/>
+    
+
+
+    <!-- http://rs.tdwg.org/dwc/terms/individualCount -->
+
+    <owl:DatatypeProperty rdf:about="http://rs.tdwg.org/dwc/terms/individualCount"/>
+    
+
+
+    <!-- http://rs.tdwg.org/dwc/terms/individualID -->
+
+    <owl:DatatypeProperty rdf:about="http://rs.tdwg.org/dwc/terms/individualID"/>
+    
+
+
+    <!-- http://rs.tdwg.org/dwc/terms/kingdom -->
+
+    <owl:DatatypeProperty rdf:about="http://rs.tdwg.org/dwc/terms/kingdom"/>
+    
+
+
+    <!-- http://rs.tdwg.org/dwc/terms/locality -->
+
+    <owl:DatatypeProperty rdf:about="http://rs.tdwg.org/dwc/terms/locality"/>
+    
+
+
+    <!-- http://rs.tdwg.org/dwc/terms/locationID -->
+
+    <owl:DatatypeProperty rdf:about="http://rs.tdwg.org/dwc/terms/locationID"/>
+    
+
+
+    <!-- http://rs.tdwg.org/dwc/terms/maximumDepthInMeters -->
+
+    <owl:DatatypeProperty rdf:about="http://rs.tdwg.org/dwc/terms/maximumDepthInMeters"/>
+    
+
+
+    <!-- http://rs.tdwg.org/dwc/terms/minimumDepthInMeters -->
+
+    <owl:DatatypeProperty rdf:about="http://rs.tdwg.org/dwc/terms/minimumDepthInMeters"/>
+    
+
+
+    <!-- http://rs.tdwg.org/dwc/terms/occurrenceRemarks -->
+
+    <owl:DatatypeProperty rdf:about="http://rs.tdwg.org/dwc/terms/occurrenceRemarks"/>
+    
+
+
+    <!-- http://rs.tdwg.org/dwc/terms/order -->
+
+    <owl:DatatypeProperty rdf:about="http://rs.tdwg.org/dwc/terms/order"/>
+    
+
+
+    <!-- http://rs.tdwg.org/dwc/terms/phylum -->
+
+    <owl:DatatypeProperty rdf:about="http://rs.tdwg.org/dwc/terms/phylum"/>
+    
+
+
+    <!-- http://rs.tdwg.org/dwc/terms/preparations -->
+
+    <owl:DatatypeProperty rdf:about="http://rs.tdwg.org/dwc/terms/preparations"/>
+    
+
+
+    <!-- http://rs.tdwg.org/dwc/terms/recordedBy -->
+
+    <owl:DatatypeProperty rdf:about="http://rs.tdwg.org/dwc/terms/recordedBy"/>
+    
+
+
+    <!-- http://rs.tdwg.org/dwc/terms/scientificName -->
+
+    <owl:DatatypeProperty rdf:about="http://rs.tdwg.org/dwc/terms/scientificName">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://rs.tdwg.org/dwc/terms/scientificNameAuthorship -->
+
+    <owl:DatatypeProperty rdf:about="http://rs.tdwg.org/dwc/terms/scientificNameAuthorship"/>
+    
+
+
+    <!-- http://rs.tdwg.org/dwc/terms/sex -->
+
+    <owl:DatatypeProperty rdf:about="http://rs.tdwg.org/dwc/terms/sex"/>
+    
+
+
+    <!-- http://rs.tdwg.org/dwc/terms/specificEpithet -->
+
+    <owl:DatatypeProperty rdf:about="http://rs.tdwg.org/dwc/terms/specificEpithet"/>
+    
+
+
+    <!-- http://rs.tdwg.org/dwc/terms/stateProvince -->
+
+    <owl:DatatypeProperty rdf:about="http://rs.tdwg.org/dwc/terms/stateProvince"/>
+    
+
+
+    <!-- http://rs.tdwg.org/dwc/terms/verbatimCoordinates -->
+
+    <owl:DatatypeProperty rdf:about="http://rs.tdwg.org/dwc/terms/verbatimCoordinates"/>
+    
+
+
+    <!-- http://rs.tdwg.org/dwc/terms/verbatimEventDate -->
+
+    <owl:DatatypeProperty rdf:about="http://rs.tdwg.org/dwc/terms/verbatimEventDate"/>
+    
+
+
+    <!-- http://rs.tdwg.org/dwc/terms/verbatimLatitude -->
+
+    <owl:DatatypeProperty rdf:about="http://rs.tdwg.org/dwc/terms/verbatimLatitude"/>
+    
+
+
+    <!-- http://rs.tdwg.org/dwc/terms/verbatimLongitude -->
+
+    <owl:DatatypeProperty rdf:about="http://rs.tdwg.org/dwc/terms/verbatimLongitude"/>
+    
+
+
+    <!-- http://rs.tdwg.org/dwc/terms/waterBody -->
+
+    <owl:DatatypeProperty rdf:about="http://rs.tdwg.org/dwc/terms/waterBody"/>
+    
+
+
+    <!-- http://www.cenpat-conicet.gob.ar/ontology/isA -->
+
+    <owl:DatatypeProperty rdf:about="http://www.cenpat-conicet.gob.ar/ontology/isA"/>
+    
+
+
+    <!-- http://www.geonames.org/ontology#countryCode -->
+
+    <owl:DatatypeProperty rdf:about="http://www.geonames.org/ontology#countryCode"/>
+    
+
+
+    <!-- http://www.w3.org/2003/01/geo/wgs84_pos#lat -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#lat"/>
+    
+
+
+    <!-- http://www.w3.org/2003/01/geo/wgs84_pos#long -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#long"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/terms/Location -->
+
+    <owl:Class rdf:about="http://purl.org/dc/terms/Location"/>
+    
+
+
+    <!-- http://rs.tdwg.org/dwc/terms/Event -->
+
+    <owl:Class rdf:about="http://rs.tdwg.org/dwc/terms/Event"/>
+    
+
+
+    <!-- http://rs.tdwg.org/dwc/terms/Occurrence -->
+
+    <owl:Class rdf:about="http://rs.tdwg.org/dwc/terms/Occurrence"/>
+    
+
+
+    <!-- http://rs.tdwg.org/dwc/terms/Taxon -->
+
+    <owl:Class rdf:about="http://rs.tdwg.org/dwc/terms/Taxon"/>
+    
+
+
+    <!-- http://rs.tdwg.org/dwc/terms/dataset -->
+
+    <owl:Class rdf:about="http://rs.tdwg.org/dwc/terms/dataset"/>
+    
+
+
+    <!-- http://www.cenpat-conicet.gob.ar/ontology/ArgentinianEEZ -->
+
+    <owl:Class rdf:about="http://www.cenpat-conicet.gob.ar/ontology/ArgentinianEEZ">
+        <rdfs:subClassOf rdf:resource="http://www.cenpat-conicet.gob.ar/ontology/Region"/>
+        <owl:disjointWith rdf:resource="http://www.cenpat-conicet.gob.ar/ontology/NonArgentinianEEZ"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cenpat-conicet.gob.ar/ontology/ElephantSeals -->
+
+    <owl:Class rdf:about="http://www.cenpat-conicet.gob.ar/ontology/ElephantSeals">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.cenpat-conicet.gob.ar/ontology/R_Elephant"/>
+                <owl:hasSelf rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasSelf>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://rs.tdwg.org/dwc/terms/Taxon"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cenpat-conicet.gob.ar/ontology/Lanternfish -->
+
+    <owl:Class rdf:about="http://www.cenpat-conicet.gob.ar/ontology/Lanternfish">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.cenpat-conicet.gob.ar/ontology/R_Lanternfish"/>
+                <owl:hasSelf rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasSelf>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://rs.tdwg.org/dwc/terms/Taxon"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cenpat-conicet.gob.ar/ontology/NonArgentinianEEZ -->
+
+    <owl:Class rdf:about="http://www.cenpat-conicet.gob.ar/ontology/NonArgentinianEEZ">
+        <rdfs:subClassOf rdf:resource="http://www.cenpat-conicet.gob.ar/ontology/Region"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cenpat-conicet.gob.ar/ontology/Parasite -->
+
+    <owl:Class rdf:about="http://www.cenpat-conicet.gob.ar/ontology/Parasite">
+        <rdfs:subClassOf rdf:resource="http://rs.tdwg.org/dwc/terms/Taxon"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cenpat-conicet.gob.ar/ontology/Region -->
+
+    <owl:Class rdf:about="http://www.cenpat-conicet.gob.ar/ontology/Region"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Agent -->
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Agent"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.5.20160517-0735) https://github.com/owlcs/owlapi -->
+
