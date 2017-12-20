@@ -6,6 +6,7 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      ontologyIRI="http://www.cenpat-conicet.gob.ar/ontology/">
+    <Prefix name="" IRI="http://www.cenpat-conicet.gob.ar/ontology/"/>
     <Prefix name="wd" IRI="http://www.wikidata.org/entity/"/>
     <Prefix name="dbr" IRI="http://dbpedia.org/resource/"/>
     <Prefix name="dwc" IRI="http://rs.tdwg.org/dwc/terms/"/>
@@ -22,7 +23,6 @@
     <Prefix name="dcterms" IRI="http://purl.org/dc/terms/"/>
     <Prefix name="geo-ont" IRI="http://www.geonames.org/ontology#"/>
     <Prefix name="geo-pos" IRI="http://www.w3.org/2003/01/geo/wgs84_pos#"/>
-    <Prefix name="bio-onto" IRI="http://www.cenpat-conicet.gob.ar/ontology/"/>
     <Declaration>
         <DataProperty abbreviatedIRI="dwc:class"/>
     </Declaration>
