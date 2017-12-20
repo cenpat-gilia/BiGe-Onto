@@ -1,644 +1,673 @@
 <?xml version="1.0"?>
-<rdf:RDF
-     xmlns:void="http://rdfs.org/ns/void#"
-     xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:wdt="http://wikidata.org/prop/direct/"
-     xmlns:bio-onto="http://www.cenpat-conicet.gob.ar/ontology/"
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.cenpat-conicet.gob.ar/ontology/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:wd="http://www.wikidata.org/entity/"
-     xmlns:envo="http://purl.obolibrary.org/obo/"
-     xmlns:dwc="http://rs.tdwg.org/dwc/terms/"
-     xmlns:geo-ont="http://www.geonames.org/ontology#"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:geo-pos="http://www.w3.org/2003/01/geo/wgs84_pos#"
-     xmlns:dbr="http://dbpedia.org/resource/"
-     xmlns:xml="http://www.w3.org/XML/1998/namespace"
-     xmlns:dcterms="http://purl.org/dc/terms/"
-     xmlns:time="http://www.w3.org/2006/time#"
-     xmlns:foaf="http://xmlns.com/foaf/0.1/">
-    <owl:Ontology rdf:about="http://www.cenpat-conicet.gob.ar/ontology/"/>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Annotation properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://rs.tdwg.org/dwc/terms/georeferenceRemarks -->
-
-    <owl:AnnotationProperty rdf:about="http://rs.tdwg.org/dwc/terms/georeferenceRemarks"/>
-    
-
-
-    <!-- http://wikidata.org/prop/direct/p21 -->
-
-    <owl:AnnotationProperty rdf:about="http://wikidata.org/prop/direct/p21"/>
-    
-
-
-    <!-- http://xmlns.com/foaf/0.1/name -->
-
-    <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/name"/>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Object Properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://www.cenpat-conicet.gob.ar/ontology/event_of -->
-
-    <owl:ObjectProperty rdf:about="http://www.cenpat-conicet.gob.ar/ontology/event_of">
-        <owl:inverseOf rdf:resource="http://www.cenpat-conicet.gob.ar/ontology/has_event"/>
-        <rdfs:domain rdf:resource="http://www.cenpat-conicet.gob.ar/ontology/BioEvent"/>
-        <rdfs:range rdf:resource="http://rs.tdwg.org/dwc/terms/Occurrence"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.cenpat-conicet.gob.ar/ontology/has_event -->
-
-    <owl:ObjectProperty rdf:about="http://www.cenpat-conicet.gob.ar/ontology/has_event">
-        <rdfs:domain rdf:resource="http://rs.tdwg.org/dwc/terms/Occurrence"/>
-        <rdfs:range rdf:resource="http://www.cenpat-conicet.gob.ar/ontology/BioEvent"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.cenpat-conicet.gob.ar/ontology/has_in -->
-
-    <owl:ObjectProperty rdf:about="http://www.cenpat-conicet.gob.ar/ontology/has_in"/>
-    
-
-
-    <!-- http://www.cenpat-conicet.gob.ar/ontology/has_location -->
-
-    <owl:ObjectProperty rdf:about="http://www.cenpat-conicet.gob.ar/ontology/has_location">
-        <owl:inverseOf rdf:resource="http://www.cenpat-conicet.gob.ar/ontology/location_of"/>
-        <rdfs:domain rdf:resource="http://rs.tdwg.org/dwc/terms/Event"/>
-        <rdfs:range rdf:resource="http://purl.org/dc/terms/Location"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.cenpat-conicet.gob.ar/ontology/has_part -->
-
-    <owl:ObjectProperty rdf:about="http://www.cenpat-conicet.gob.ar/ontology/has_part">
-        <rdfs:domain rdf:resource="http://rdfs.org/ns/void#Dataset"/>
-        <rdfs:range rdf:resource="http://rs.tdwg.org/dwc/terms/Occurrence"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.cenpat-conicet.gob.ar/ontology/has_taxon -->
-
-    <owl:ObjectProperty rdf:about="http://www.cenpat-conicet.gob.ar/ontology/has_taxon">
-        <owl:inverseOf rdf:resource="http://www.cenpat-conicet.gob.ar/ontology/taxon_of"/>
-        <rdfs:domain rdf:resource="http://rs.tdwg.org/dwc/terms/Occurrence"/>
-        <rdfs:range rdf:resource="http://rs.tdwg.org/dwc/terms/Taxon"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.cenpat-conicet.gob.ar/ontology/into_eez -->
-
-    <owl:ObjectProperty rdf:about="http://www.cenpat-conicet.gob.ar/ontology/into_eez">
-        <rdfs:domain rdf:resource="http://purl.org/dc/terms/Location"/>
-        <rdfs:range rdf:resource="http://www.cenpat-conicet.gob.ar/ontology/Region"/>
-        <rdfs:comment>eez: exclusive economic zone.</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.cenpat-conicet.gob.ar/ontology/is_part_of -->
-
-    <owl:ObjectProperty rdf:about="http://www.cenpat-conicet.gob.ar/ontology/is_part_of">
-        <rdfs:domain rdf:resource="http://rs.tdwg.org/dwc/terms/Occurrence"/>
-        <rdfs:range rdf:resource="http://rdfs.org/ns/void#Dataset"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.cenpat-conicet.gob.ar/ontology/location_of -->
-
-    <owl:ObjectProperty rdf:about="http://www.cenpat-conicet.gob.ar/ontology/location_of">
-        <rdfs:domain rdf:resource="http://purl.org/dc/terms/Location"/>
-        <rdfs:range rdf:resource="http://rs.tdwg.org/dwc/terms/Event"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.cenpat-conicet.gob.ar/ontology/recorded_by -->
-
-    <owl:ObjectProperty rdf:about="http://www.cenpat-conicet.gob.ar/ontology/recorded_by">
-        <rdfs:domain rdf:resource="http://rs.tdwg.org/dwc/terms/Occurrence"/>
-        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.cenpat-conicet.gob.ar/ontology/taxon_of -->
-
-    <owl:ObjectProperty rdf:about="http://www.cenpat-conicet.gob.ar/ontology/taxon_of">
-        <rdfs:domain rdf:resource="http://rs.tdwg.org/dwc/terms/Taxon"/>
-        <rdfs:range rdf:resource="http://rs.tdwg.org/dwc/terms/Occurrence"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Data properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://purl.org/dc/terms/source -->
-
-    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/source">
-        <rdfs:domain rdf:resource="http://rdfs.org/ns/void#Dataset"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://rs.tdwg.org/dwc/terms/basisOfRecord -->
-
-    <owl:DatatypeProperty rdf:about="http://rs.tdwg.org/dwc/terms/basisOfRecord">
-        <rdfs:domain rdf:resource="http://rs.tdwg.org/dwc/terms/Occurrence"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://rs.tdwg.org/dwc/terms/catalogNumber -->
-
-    <owl:DatatypeProperty rdf:about="http://rs.tdwg.org/dwc/terms/catalogNumber">
-        <rdfs:domain rdf:resource="http://rs.tdwg.org/dwc/terms/Occurrence"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://rs.tdwg.org/dwc/terms/class -->
-
-    <owl:DatatypeProperty rdf:about="http://rs.tdwg.org/dwc/terms/class">
-        <rdfs:domain rdf:resource="http://rs.tdwg.org/dwc/terms/Taxon"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://rs.tdwg.org/dwc/terms/collectionCode -->
-
-    <owl:DatatypeProperty rdf:about="http://rs.tdwg.org/dwc/terms/collectionCode">
-        <rdfs:domain rdf:resource="http://rs.tdwg.org/dwc/terms/Occurrence"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://rs.tdwg.org/dwc/terms/country -->
-
-    <owl:DatatypeProperty rdf:about="http://rs.tdwg.org/dwc/terms/country">
-        <rdfs:domain rdf:resource="http://purl.org/dc/terms/Location"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://rs.tdwg.org/dwc/terms/decimalLatitude -->
-
-    <owl:DatatypeProperty rdf:about="http://rs.tdwg.org/dwc/terms/decimalLatitude">
-        <rdfs:domain rdf:resource="http://purl.org/dc/terms/Location"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://rs.tdwg.org/dwc/terms/decimalLongitude -->
-
-    <owl:DatatypeProperty rdf:about="http://rs.tdwg.org/dwc/terms/decimalLongitude">
-        <rdfs:domain rdf:resource="http://purl.org/dc/terms/Location"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://rs.tdwg.org/dwc/terms/eventDate -->
-
-    <owl:DatatypeProperty rdf:about="http://rs.tdwg.org/dwc/terms/eventDate">
-        <rdfs:domain rdf:resource="http://www.cenpat-conicet.gob.ar/ontology/BioEvent"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://rs.tdwg.org/dwc/terms/family -->
-
-    <owl:DatatypeProperty rdf:about="http://rs.tdwg.org/dwc/terms/family">
-        <rdfs:domain rdf:resource="http://rs.tdwg.org/dwc/terms/Taxon"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://rs.tdwg.org/dwc/terms/genus -->
-
-    <owl:DatatypeProperty rdf:about="http://rs.tdwg.org/dwc/terms/genus">
-        <rdfs:domain rdf:resource="http://rs.tdwg.org/dwc/terms/Taxon"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://rs.tdwg.org/dwc/terms/individualCount -->
-
-    <owl:DatatypeProperty rdf:about="http://rs.tdwg.org/dwc/terms/individualCount">
-        <rdfs:domain rdf:resource="http://rs.tdwg.org/dwc/terms/Occurrence"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://rs.tdwg.org/dwc/terms/kingdom -->
-
-    <owl:DatatypeProperty rdf:about="http://rs.tdwg.org/dwc/terms/kingdom">
-        <rdfs:domain rdf:resource="http://rs.tdwg.org/dwc/terms/Taxon"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://rs.tdwg.org/dwc/terms/locality -->
-
-    <owl:DatatypeProperty rdf:about="http://rs.tdwg.org/dwc/terms/locality">
-        <rdfs:domain rdf:resource="http://purl.org/dc/terms/Location"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://rs.tdwg.org/dwc/terms/locationID -->
-
-    <owl:DatatypeProperty rdf:about="http://rs.tdwg.org/dwc/terms/locationID">
-        <rdfs:domain rdf:resource="http://purl.org/dc/terms/Location"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://rs.tdwg.org/dwc/terms/maximumDepthInMeters -->
-
-    <owl:DatatypeProperty rdf:about="http://rs.tdwg.org/dwc/terms/maximumDepthInMeters">
-        <rdfs:domain rdf:resource="http://purl.org/dc/terms/Location"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://rs.tdwg.org/dwc/terms/minimumDepthInMeters -->
-
-    <owl:DatatypeProperty rdf:about="http://rs.tdwg.org/dwc/terms/minimumDepthInMeters">
-        <rdfs:domain rdf:resource="http://purl.org/dc/terms/Location"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://rs.tdwg.org/dwc/terms/occurrenceID -->
-
-    <owl:DatatypeProperty rdf:about="http://rs.tdwg.org/dwc/terms/occurrenceID">
-        <rdfs:domain rdf:resource="http://rs.tdwg.org/dwc/terms/Occurrence"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://rs.tdwg.org/dwc/terms/occurrenceRemarks -->
-
-    <owl:DatatypeProperty rdf:about="http://rs.tdwg.org/dwc/terms/occurrenceRemarks">
-        <rdfs:domain rdf:resource="http://rs.tdwg.org/dwc/terms/Occurrence"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://rs.tdwg.org/dwc/terms/order -->
-
-    <owl:DatatypeProperty rdf:about="http://rs.tdwg.org/dwc/terms/order">
-        <rdfs:domain rdf:resource="http://rs.tdwg.org/dwc/terms/Taxon"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://rs.tdwg.org/dwc/terms/phylum -->
-
-    <owl:DatatypeProperty rdf:about="http://rs.tdwg.org/dwc/terms/phylum">
-        <rdfs:domain rdf:resource="http://rs.tdwg.org/dwc/terms/Taxon"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://rs.tdwg.org/dwc/terms/scientificName -->
-
-    <owl:DatatypeProperty rdf:about="http://rs.tdwg.org/dwc/terms/scientificName">
-        <rdfs:domain rdf:resource="http://rs.tdwg.org/dwc/terms/Taxon"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://rs.tdwg.org/dwc/terms/scientificNameAuthorship -->
-
-    <owl:DatatypeProperty rdf:about="http://rs.tdwg.org/dwc/terms/scientificNameAuthorship">
-        <rdfs:domain rdf:resource="http://rs.tdwg.org/dwc/terms/Taxon"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://rs.tdwg.org/dwc/terms/sex -->
-
-    <owl:DatatypeProperty rdf:about="http://rs.tdwg.org/dwc/terms/sex">
-        <rdfs:domain rdf:resource="http://rs.tdwg.org/dwc/terms/Occurrence"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://rs.tdwg.org/dwc/terms/specificEpithet -->
-
-    <owl:DatatypeProperty rdf:about="http://rs.tdwg.org/dwc/terms/specificEpithet">
-        <rdfs:domain rdf:resource="http://rs.tdwg.org/dwc/terms/Taxon"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://rs.tdwg.org/dwc/terms/stateProvince -->
-
-    <owl:DatatypeProperty rdf:about="http://rs.tdwg.org/dwc/terms/stateProvince">
-        <rdfs:domain rdf:resource="http://purl.org/dc/terms/Location"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://rs.tdwg.org/dwc/terms/verbatimCoordinates -->
-
-    <owl:DatatypeProperty rdf:about="http://rs.tdwg.org/dwc/terms/verbatimCoordinates">
-        <rdfs:domain rdf:resource="http://purl.org/dc/terms/Location"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://rs.tdwg.org/dwc/terms/verbatimEventDate -->
-
-    <owl:DatatypeProperty rdf:about="http://rs.tdwg.org/dwc/terms/verbatimEventDate">
-        <rdfs:domain rdf:resource="http://purl.org/dc/terms/Location"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://rs.tdwg.org/dwc/terms/verbatimLatitude -->
-
-    <owl:DatatypeProperty rdf:about="http://rs.tdwg.org/dwc/terms/verbatimLatitude">
-        <rdfs:domain rdf:resource="http://purl.org/dc/terms/Location"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://rs.tdwg.org/dwc/terms/verbatimLongitude -->
-
-    <owl:DatatypeProperty rdf:about="http://rs.tdwg.org/dwc/terms/verbatimLongitude">
-        <rdfs:domain rdf:resource="http://purl.org/dc/terms/Location"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://rs.tdwg.org/dwc/terms/waterBody -->
-
-    <owl:DatatypeProperty rdf:about="http://rs.tdwg.org/dwc/terms/waterBody">
-        <rdfs:domain rdf:resource="http://purl.org/dc/terms/Location"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.w3.org/2003/01/geo/wgs84_pos#lat -->
-
-    <owl:DatatypeProperty rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#lat">
-        <rdfs:domain rdf:resource="http://purl.org/dc/terms/Location"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.w3.org/2003/01/geo/wgs84_pos#long -->
-
-    <owl:DatatypeProperty rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#long">
-        <rdfs:domain rdf:resource="http://purl.org/dc/terms/Location"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Classes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/ENVO_00000428 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_00000428">
-        <rdfs:comment>Biome</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/ENVO_00002297 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_00002297">
-        <rdfs:comment>enviromental feature</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/ENVO_00010483 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_00010483">
-        <rdfs:comment>enviromental material</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/dc/terms/Location -->
-
-    <owl:Class rdf:about="http://purl.org/dc/terms/Location">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.cenpat-conicet.gob.ar/ontology/location_of"/>
-                <owl:someValuesFrom rdf:resource="http://www.cenpat-conicet.gob.ar/ontology/BioEvent"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.cenpat-conicet.gob.ar/ontology/into_eez"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://www.cenpat-conicet.gob.ar/ontology/Region"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </owl:Class>
-    
-
-
-    <!-- http://rdfs.org/ns/void#Dataset -->
-
-    <owl:Class rdf:about="http://rdfs.org/ns/void#Dataset">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.cenpat-conicet.gob.ar/ontology/has_part"/>
-                <owl:someValuesFrom rdf:resource="http://rs.tdwg.org/dwc/terms/Occurrence"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </owl:Class>
-    
-
-
-    <!-- http://rs.tdwg.org/dwc/terms/Event -->
-
-    <owl:Class rdf:about="http://rs.tdwg.org/dwc/terms/Event"/>
-    
-
-
-    <!-- http://rs.tdwg.org/dwc/terms/Occurrence -->
-
-    <owl:Class rdf:about="http://rs.tdwg.org/dwc/terms/Occurrence">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.cenpat-conicet.gob.ar/ontology/recorded_by"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.cenpat-conicet.gob.ar/ontology/has_event"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://www.cenpat-conicet.gob.ar/ontology/BioEvent"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.cenpat-conicet.gob.ar/ontology/has_taxon"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://rs.tdwg.org/dwc/terms/Taxon"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.cenpat-conicet.gob.ar/ontology/is_part_of"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://rdfs.org/ns/void#Dataset"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </owl:Class>
-    
-
-
-    <!-- http://rs.tdwg.org/dwc/terms/Taxon -->
-
-    <owl:Class rdf:about="http://rs.tdwg.org/dwc/terms/Taxon">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.cenpat-conicet.gob.ar/ontology/taxon_of"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="http://rs.tdwg.org/dwc/terms/Occurrence"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </owl:Class>
-    
-
-
-    <!-- http://www.cenpat-conicet.gob.ar/ontology/BioEvent -->
-
-    <owl:Class rdf:about="http://www.cenpat-conicet.gob.ar/ontology/BioEvent">
-        <rdfs:subClassOf rdf:resource="http://rs.tdwg.org/dwc/terms/Event"/>
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.cenpat-conicet.gob.ar/ontology/event_of"/>
-                <owl:someValuesFrom rdf:resource="http://rs.tdwg.org/dwc/terms/Occurrence"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.cenpat-conicet.gob.ar/ontology/has_location"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://purl.org/dc/terms/Location"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </owl:Class>
-    
-
-
-    <!-- http://www.cenpat-conicet.gob.ar/ontology/Region -->
-
-    <owl:Class rdf:about="http://www.cenpat-conicet.gob.ar/ontology/Region">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000428"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_00002297"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_00010483"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.cenpat-conicet.gob.ar/ontology/has_in"/>
-                <owl:someValuesFrom rdf:resource="http://purl.org/dc/terms/Location"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </owl:Class>
-    
-
-
-    <!-- http://www.w3.org/2006/time#TemporalEntity -->
-
-    <owl:Class rdf:about="http://www.w3.org/2006/time#TemporalEntity"/>
-    
-
-
-    <!-- http://xmlns.com/foaf/0.1/Agent -->
-
-    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Agent"/>
-</rdf:RDF>
+     ontologyIRI="http://www.cenpat-conicet.gob.ar/ontology/">
+    <Prefix name="wd" IRI="http://www.wikidata.org/entity/"/>
+    <Prefix name="dbr" IRI="http://dbpedia.org/resource/"/>
+    <Prefix name="dwc" IRI="http://rs.tdwg.org/dwc/terms/"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="wdt" IRI="http://wikidata.org/prop/direct/"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="envo" IRI="http://purl.obolibrary.org/obo/"/>
+    <Prefix name="foaf" IRI="http://xmlns.com/foaf/0.1/"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="time" IRI="http://www.w3.org/2006/time#"/>
+    <Prefix name="void" IRI="http://rdfs.org/ns/void#"/>
+    <Prefix name="dcterms" IRI="http://purl.org/dc/terms/"/>
+    <Prefix name="geo-ont" IRI="http://www.geonames.org/ontology#"/>
+    <Prefix name="geo-pos" IRI="http://www.w3.org/2003/01/geo/wgs84_pos#"/>
+    <Prefix name="bio-onto" IRI="http://www.cenpat-conicet.gob.ar/ontology/"/>
+    <Declaration>
+        <DataProperty abbreviatedIRI="dwc:class"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="envo:ENVO_00000428"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="dwc:kingdom"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="is_part_of"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="dwc:waterBody"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="dwc:phylum"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="dwc:decimalLongitude"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="foaf:Agent"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="dwc:Event"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dwc:georeferenceRemarks"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="dwc:collectionCode"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="dwc:locationID"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="dwc:verbatimCoordinates"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="dwc:verbatimEventDate"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="has_event"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="dcterms:source"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="event_of"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="geo-pos:long"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="dwc:order"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="dwc:minimumDepthInMeters"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="dwc:locality"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="dwc:occurrenceID"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="time:TemporalEntity"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="void:Dataset"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="dwc:eventDate"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="envo:ENVO_00010483"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="has_location"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="dwc:decimalLatitude"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="dwc:catalogNumber"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="into_eez"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="dcterms:Location"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="dwc:Occurrence"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="recorded_by"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="dwc:family"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="dwc:genus"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="location_of"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="dwc:specificEpithet"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="has_taxon"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="dwc:maximumDepthInMeters"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="BioEvent"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="has_in"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="dwc:scientificName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="dwc:occurrenceRemarks"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="dwc:scientificNameAuthorship"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="has_part"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="dwc:verbatimLatitude"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="dwc:basisOfRecord"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="foaf:name"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="dwc:sex"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="dwc:Taxon"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Region"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="envo:ENVO_00002297"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="dwc:individualCount"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="taxon_of"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="dwc:verbatimLongitude"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="wdt:p21"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="geo-pos:lat"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="dwc:country"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="dwc:stateProvince"/>
+    </Declaration>
+    <SubClassOf>
+        <Class abbreviatedIRI="dcterms:Location"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="location_of"/>
+            <Class IRI="BioEvent"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="dcterms:Location"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="into_eez"/>
+            <Class IRI="Region"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="void:Dataset"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="has_part"/>
+            <Class abbreviatedIRI="dwc:Occurrence"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="dwc:Occurrence"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="recorded_by"/>
+            <Class abbreviatedIRI="foaf:Agent"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="dwc:Occurrence"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="has_event"/>
+            <Class IRI="BioEvent"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="dwc:Occurrence"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="has_taxon"/>
+            <Class abbreviatedIRI="dwc:Taxon"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="dwc:Occurrence"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="is_part_of"/>
+            <Class abbreviatedIRI="void:Dataset"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="dwc:Taxon"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="taxon_of"/>
+            <Class abbreviatedIRI="dwc:Occurrence"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="BioEvent"/>
+        <Class abbreviatedIRI="dwc:Event"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="BioEvent"/>
+        <Class abbreviatedIRI="time:TemporalEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="BioEvent"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="event_of"/>
+            <Class abbreviatedIRI="dwc:Occurrence"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="BioEvent"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="has_location"/>
+            <Class abbreviatedIRI="dcterms:Location"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Region"/>
+        <Class abbreviatedIRI="envo:ENVO_00000428"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Region"/>
+        <Class abbreviatedIRI="envo:ENVO_00002297"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Region"/>
+        <Class abbreviatedIRI="envo:ENVO_00010483"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Region"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="has_in"/>
+            <Class abbreviatedIRI="dcterms:Location"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="event_of"/>
+        <ObjectProperty IRI="has_event"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="has_location"/>
+        <ObjectProperty IRI="location_of"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="has_taxon"/>
+        <ObjectProperty IRI="taxon_of"/>
+    </InverseObjectProperties>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="event_of"/>
+        <Class IRI="BioEvent"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="has_event"/>
+        <Class abbreviatedIRI="dwc:Occurrence"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="has_location"/>
+        <Class abbreviatedIRI="dwc:Event"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="has_part"/>
+        <Class abbreviatedIRI="void:Dataset"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="has_taxon"/>
+        <Class abbreviatedIRI="dwc:Occurrence"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="into_eez"/>
+        <Class abbreviatedIRI="dcterms:Location"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="is_part_of"/>
+        <Class abbreviatedIRI="dwc:Occurrence"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="location_of"/>
+        <Class abbreviatedIRI="dcterms:Location"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="recorded_by"/>
+        <Class abbreviatedIRI="dwc:Occurrence"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="taxon_of"/>
+        <Class abbreviatedIRI="dwc:Taxon"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="event_of"/>
+        <Class abbreviatedIRI="dwc:Occurrence"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="has_event"/>
+        <Class IRI="BioEvent"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="has_location"/>
+        <Class abbreviatedIRI="dcterms:Location"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="has_part"/>
+        <Class abbreviatedIRI="dwc:Occurrence"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="has_taxon"/>
+        <Class abbreviatedIRI="dwc:Taxon"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="into_eez"/>
+        <Class IRI="Region"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="is_part_of"/>
+        <Class abbreviatedIRI="void:Dataset"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="location_of"/>
+        <Class abbreviatedIRI="dwc:Event"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="recorded_by"/>
+        <Class abbreviatedIRI="foaf:Agent"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="taxon_of"/>
+        <Class abbreviatedIRI="dwc:Occurrence"/>
+    </ObjectPropertyRange>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="dcterms:source"/>
+        <Class abbreviatedIRI="void:Dataset"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="dwc:basisOfRecord"/>
+        <Class abbreviatedIRI="dwc:Occurrence"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="dwc:catalogNumber"/>
+        <Class abbreviatedIRI="dwc:Occurrence"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="dwc:class"/>
+        <Class abbreviatedIRI="dwc:Taxon"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="dwc:collectionCode"/>
+        <Class abbreviatedIRI="dwc:Occurrence"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="dwc:country"/>
+        <Class abbreviatedIRI="dcterms:Location"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="dwc:decimalLatitude"/>
+        <Class abbreviatedIRI="dcterms:Location"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="dwc:decimalLongitude"/>
+        <Class abbreviatedIRI="dcterms:Location"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="dwc:eventDate"/>
+        <Class IRI="BioEvent"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="dwc:family"/>
+        <Class abbreviatedIRI="dwc:Taxon"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="dwc:genus"/>
+        <Class abbreviatedIRI="dwc:Taxon"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="dwc:individualCount"/>
+        <Class abbreviatedIRI="dwc:Occurrence"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="dwc:kingdom"/>
+        <Class abbreviatedIRI="dwc:Taxon"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="dwc:locality"/>
+        <Class abbreviatedIRI="dcterms:Location"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="dwc:locationID"/>
+        <Class abbreviatedIRI="dcterms:Location"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="dwc:maximumDepthInMeters"/>
+        <Class abbreviatedIRI="dcterms:Location"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="dwc:minimumDepthInMeters"/>
+        <Class abbreviatedIRI="dcterms:Location"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="dwc:occurrenceID"/>
+        <Class abbreviatedIRI="dwc:Occurrence"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="dwc:occurrenceRemarks"/>
+        <Class abbreviatedIRI="dwc:Occurrence"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="dwc:order"/>
+        <Class abbreviatedIRI="dwc:Taxon"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="dwc:phylum"/>
+        <Class abbreviatedIRI="dwc:Taxon"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="dwc:scientificName"/>
+        <Class abbreviatedIRI="dwc:Taxon"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="dwc:scientificNameAuthorship"/>
+        <Class abbreviatedIRI="dwc:Taxon"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="dwc:sex"/>
+        <Class abbreviatedIRI="dwc:Occurrence"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="dwc:specificEpithet"/>
+        <Class abbreviatedIRI="dwc:Taxon"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="dwc:stateProvince"/>
+        <Class abbreviatedIRI="dcterms:Location"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="dwc:verbatimCoordinates"/>
+        <Class abbreviatedIRI="dcterms:Location"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="dwc:verbatimEventDate"/>
+        <Class abbreviatedIRI="dcterms:Location"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="dwc:verbatimLatitude"/>
+        <Class abbreviatedIRI="dcterms:Location"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="dwc:verbatimLongitude"/>
+        <Class abbreviatedIRI="dcterms:Location"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="dwc:waterBody"/>
+        <Class abbreviatedIRI="dcterms:Location"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="geo-pos:lat"/>
+        <Class abbreviatedIRI="dcterms:Location"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="geo-pos:long"/>
+        <Class abbreviatedIRI="dcterms:Location"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="dcterms:source"/>
+        <Datatype abbreviatedIRI="xsd:anyURI"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="dwc:basisOfRecord"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="dwc:catalogNumber"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="dwc:class"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="dwc:country"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="dwc:decimalLatitude"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="dwc:decimalLongitude"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="dwc:eventDate"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="dwc:family"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="dwc:genus"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="dwc:individualCount"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="dwc:kingdom"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="dwc:locality"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="dwc:locationID"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="dwc:maximumDepthInMeters"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="dwc:minimumDepthInMeters"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="dwc:occurrenceID"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="dwc:occurrenceRemarks"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="dwc:phylum"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="dwc:scientificName"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="dwc:scientificNameAuthorship"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="dwc:sex"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="dwc:specificEpithet"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="dwc:stateProvince"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="dwc:verbatimCoordinates"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="dwc:verbatimEventDate"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="dwc:verbatimLatitude"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="dwc:verbatimLongitude"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="dwc:waterBody"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="geo-pos:lat"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="geo-pos:long"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>envo:ENVO_00000428</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Biome</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>envo:ENVO_00002297</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">enviromental feature</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>envo:ENVO_00010483</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">enviromental material</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>into_eez</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">eez: exclusive economic zone.</Literal>
+    </AnnotationAssertion>
+</Ontology>
 
 
 
 <!-- Generated by the OWL API (version 4.2.5.20160517-0735) https://github.com/owlcs/owlapi -->
+
