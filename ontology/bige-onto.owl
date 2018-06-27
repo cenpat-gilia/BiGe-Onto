@@ -1,0 +1,1187 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.cenpat-conicet.gob.ar/bige-onto/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.cenpat-conicet.gob.ar/bige-onto/">
+    <Prefix name="" IRI="http://www.cenpat-conicet.gob.ar/bige-onto/"/>
+    <Prefix name="wd" IRI="http://www.wikidata.org/entity/"/>
+    <Prefix name="dbr" IRI="http://dbpedia.org/resource/"/>
+    <Prefix name="dwc" IRI="http://rs.tdwg.org/dwc/terms/"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="wdt" IRI="http://wikidata.org/prop/direct/"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="envo" IRI="http://purl.obolibrary.org/obo/"/>
+    <Prefix name="foaf" IRI="http://xmlns.com/foaf/0.1/"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="void" IRI="http://rdfs.org/ns/void#"/>
+    <Prefix name="dwciri" IRI="http://rs.tdwg.org/dwc/iri/"/>
+    <Prefix name="dcterms" IRI="http://purl.org/dc/terms/"/>
+    <Prefix name="geo-ont" IRI="http://www.geonames.org/ontology#"/>
+    <Prefix name="geo-pos" IRI="http://www.w3.org/2003/01/geo/wgs84_pos#"/>
+    <Prefix name="bige-onto" IRI="http://www.cenpat-conicet.gob.ar/ontology/"/>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/contributor"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Claudio Delrieux</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">1.0</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/rights"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Universidad Nacional del Comahue</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/creator"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Germán Braun</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/contributor"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Mirtha Lewis</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">BiGe-Onto is the core ontology of an Ontology-Based System for Managing Biodiversity and Biogeography Data hosted in public repositories GBIF and OBIS, respectively.</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/creator"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Marcos Zarate</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/rights"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Centro Científico Tecnológico CENPAT</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/contributor"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Pablo Fillottrani</Literal>
+    </Annotation>
+    <Declaration>
+        <Class abbreviatedIRI="envo:ENVO_00000428"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:eventDate"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="byFeature"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/contributor"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/rights"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="BioEvent"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:decimalLongitude"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="foaf:name"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:phylum"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="byMaterial"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Region"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:kingdom"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:occurrenceID"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="has_location"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:scientificName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:country"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dwc:georeferenceRemarks"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:scientificNameAuthorship"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:stateProvince"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="dwciri:recordedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="belongsTo"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:genus"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:collectionCode"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:order"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="dcterms:source"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://rs.tdwg.org/dwc/terms/dwc:Taxon"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:verbatimLatitude"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="geo-pos:long"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="dcterms:title"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="memberOf"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:occurrenceRemarks"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Environment"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="void:Dataset"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="envo:ENVO_00010483"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:maximumDepthInMeters"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:locationID"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:decimalLatitude"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="has_event"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:sex"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:family"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="dcterms:Location"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:organismName"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://rs.tdwg.org/dwc/terms/dwc:Occurrence"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:catalogNumber"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://rs.tdwg.org/dwc/terms/dwc:Organism"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="associated"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:verbatimEventDate"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/creator"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="caraterizes"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="byBiome"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:individualCount"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:verbatimLongitude"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:locality"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="foaf:name"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:minimumDepthInMeters"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:organismID"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="void:sparqlEndpoint"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://rs.tdwg.org/dwc/terms/dwc:Event"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:basisOfRecord"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="envo:ENVO_00002297"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:specificEpithet"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:waterBody"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="foaf:Person"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="wdt:p21"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:class"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:verbatimCoordinates"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="geo-pos:lat"/>
+    </Declaration>
+    <SubClassOf>
+        <Class abbreviatedIRI="envo:ENVO_00000428"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectInverseOf>
+                <ObjectProperty IRI="byBiome"/>
+            </ObjectInverseOf>
+            <Class IRI="Environment"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="envo:ENVO_00002297"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectInverseOf>
+                <ObjectProperty IRI="byFeature"/>
+            </ObjectInverseOf>
+            <Class IRI="Environment"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="envo:ENVO_00010483"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectInverseOf>
+                <ObjectProperty IRI="byMaterial"/>
+            </ObjectInverseOf>
+            <Class IRI="Environment"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="dcterms:Location"/>
+        <Class IRI="Region"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://rs.tdwg.org/dwc/terms/dwc:Occurrence"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="dwciri:recordedBy"/>
+            <Class abbreviatedIRI="foaf:Person"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://rs.tdwg.org/dwc/terms/dwc:Occurrence"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="associated"/>
+            <Class IRI="http://rs.tdwg.org/dwc/terms/dwc:Organism"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://rs.tdwg.org/dwc/terms/dwc:Occurrence"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="has_event"/>
+            <Class IRI="BioEvent"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://rs.tdwg.org/dwc/terms/dwc:Occurrence"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="memberOf"/>
+            <Class abbreviatedIRI="void:Dataset"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://rs.tdwg.org/dwc/terms/dwc:Organism"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="belongsTo"/>
+            <Class IRI="http://rs.tdwg.org/dwc/terms/dwc:Taxon"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://rs.tdwg.org/dwc/terms/dwc:Taxon"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectInverseOf>
+                <ObjectProperty IRI="belongsTo"/>
+            </ObjectInverseOf>
+            <Class IRI="http://rs.tdwg.org/dwc/terms/dwc:Organism"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="BioEvent"/>
+        <Class IRI="http://rs.tdwg.org/dwc/terms/dwc:Event"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="BioEvent"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="has_location"/>
+            <Class abbreviatedIRI="dcterms:Location"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="BioEvent"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectInverseOf>
+                <ObjectProperty IRI="has_event"/>
+            </ObjectInverseOf>
+            <Class IRI="http://rs.tdwg.org/dwc/terms/dwc:Occurrence"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Environment"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="byBiome"/>
+            <Class abbreviatedIRI="envo:ENVO_00000428"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Environment"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="byFeature"/>
+            <Class abbreviatedIRI="envo:ENVO_00002297"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Environment"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="byMaterial"/>
+            <Class abbreviatedIRI="envo:ENVO_00010483"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Environment"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="caraterizes"/>
+            <Class IRI="Region"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Region"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectInverseOf>
+                <ObjectProperty IRI="caraterizes"/>
+            </ObjectInverseOf>
+            <Class IRI="Environment"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="foaf:Person"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectInverseOf>
+                <ObjectProperty abbreviatedIRI="dwciri:recordedBy"/>
+            </ObjectInverseOf>
+            <Class IRI="http://rs.tdwg.org/dwc/terms/dwc:Occurrence"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="dwciri:recordedBy"/>
+        <Class IRI="http://rs.tdwg.org/dwc/terms/dwc:Occurrence"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="associated"/>
+        <Class IRI="http://rs.tdwg.org/dwc/terms/dwc:Occurrence"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="belongsTo"/>
+        <Class IRI="http://rs.tdwg.org/dwc/terms/dwc:Organism"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="byBiome"/>
+        <Class IRI="Environment"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="byFeature"/>
+        <Class IRI="Environment"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="byMaterial"/>
+        <Class IRI="Environment"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="caraterizes"/>
+        <Class IRI="Environment"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="has_event"/>
+        <Class IRI="http://rs.tdwg.org/dwc/terms/dwc:Occurrence"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="has_location"/>
+        <Class IRI="BioEvent"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="memberOf"/>
+        <Class IRI="http://rs.tdwg.org/dwc/terms/dwc:Occurrence"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="dwciri:recordedBy"/>
+        <Class abbreviatedIRI="foaf:Person"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="associated"/>
+        <Class IRI="http://rs.tdwg.org/dwc/terms/dwc:Organism"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="belongsTo"/>
+        <Class IRI="http://rs.tdwg.org/dwc/terms/dwc:Taxon"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="byBiome"/>
+        <Class abbreviatedIRI="envo:ENVO_00000428"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="byFeature"/>
+        <Class abbreviatedIRI="envo:ENVO_00002297"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="byMaterial"/>
+        <Class abbreviatedIRI="envo:ENVO_00010483"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="caraterizes"/>
+        <Class IRI="Region"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="has_event"/>
+        <Class IRI="BioEvent"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="has_location"/>
+        <Class abbreviatedIRI="dcterms:Location"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="memberOf"/>
+        <Class abbreviatedIRI="void:Dataset"/>
+    </ObjectPropertyRange>
+    <EquivalentDataProperties>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:decimalLatitude"/>
+        <DataProperty abbreviatedIRI="geo-pos:lat"/>
+    </EquivalentDataProperties>
+    <EquivalentDataProperties>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:decimalLongitude"/>
+        <DataProperty abbreviatedIRI="geo-pos:long"/>
+    </EquivalentDataProperties>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="dcterms:source"/>
+        <Class abbreviatedIRI="void:Dataset"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="dcterms:title"/>
+        <Class abbreviatedIRI="void:Dataset"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="void:sparqlEndpoint"/>
+        <Class abbreviatedIRI="void:Dataset"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:basisOfRecord"/>
+        <Class IRI="http://rs.tdwg.org/dwc/terms/dwc:Occurrence"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:catalogNumber"/>
+        <Class IRI="http://rs.tdwg.org/dwc/terms/dwc:Occurrence"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:class"/>
+        <Class IRI="http://rs.tdwg.org/dwc/terms/dwc:Taxon"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:collectionCode"/>
+        <Class IRI="http://rs.tdwg.org/dwc/terms/dwc:Occurrence"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:country"/>
+        <Class abbreviatedIRI="dcterms:Location"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:decimalLatitude"/>
+        <Class abbreviatedIRI="dcterms:Location"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:decimalLongitude"/>
+        <Class abbreviatedIRI="dcterms:Location"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:eventDate"/>
+        <Class IRI="BioEvent"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:family"/>
+        <Class IRI="http://rs.tdwg.org/dwc/terms/dwc:Taxon"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:genus"/>
+        <Class IRI="http://rs.tdwg.org/dwc/terms/dwc:Taxon"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:individualCount"/>
+        <Class IRI="http://rs.tdwg.org/dwc/terms/dwc:Occurrence"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:kingdom"/>
+        <Class IRI="http://rs.tdwg.org/dwc/terms/dwc:Taxon"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:locality"/>
+        <Class abbreviatedIRI="dcterms:Location"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:locationID"/>
+        <Class abbreviatedIRI="dcterms:Location"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:maximumDepthInMeters"/>
+        <Class abbreviatedIRI="dcterms:Location"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:minimumDepthInMeters"/>
+        <Class abbreviatedIRI="dcterms:Location"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:occurrenceID"/>
+        <Class IRI="http://rs.tdwg.org/dwc/terms/dwc:Occurrence"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:occurrenceRemarks"/>
+        <Class IRI="http://rs.tdwg.org/dwc/terms/dwc:Occurrence"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:order"/>
+        <Class IRI="http://rs.tdwg.org/dwc/terms/dwc:Taxon"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:organismID"/>
+        <Class IRI="http://rs.tdwg.org/dwc/terms/dwc:Organism"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:organismName"/>
+        <Class IRI="http://rs.tdwg.org/dwc/terms/dwc:Organism"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:phylum"/>
+        <Class IRI="http://rs.tdwg.org/dwc/terms/dwc:Taxon"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:scientificName"/>
+        <Class IRI="http://rs.tdwg.org/dwc/terms/dwc:Taxon"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:scientificNameAuthorship"/>
+        <Class IRI="http://rs.tdwg.org/dwc/terms/dwc:Taxon"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:sex"/>
+        <Class IRI="http://rs.tdwg.org/dwc/terms/dwc:Occurrence"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:specificEpithet"/>
+        <Class IRI="http://rs.tdwg.org/dwc/terms/dwc:Taxon"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:stateProvince"/>
+        <Class abbreviatedIRI="dcterms:Location"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:verbatimCoordinates"/>
+        <Class abbreviatedIRI="dcterms:Location"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:verbatimEventDate"/>
+        <Class abbreviatedIRI="dcterms:Location"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:verbatimLatitude"/>
+        <Class abbreviatedIRI="dcterms:Location"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:verbatimLongitude"/>
+        <Class abbreviatedIRI="dcterms:Location"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:waterBody"/>
+        <Class abbreviatedIRI="dcterms:Location"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="geo-pos:lat"/>
+        <Class abbreviatedIRI="dcterms:Location"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="geo-pos:long"/>
+        <Class abbreviatedIRI="dcterms:Location"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="foaf:name"/>
+        <Class abbreviatedIRI="foaf:Person"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="dcterms:source"/>
+        <Datatype abbreviatedIRI="xsd:anyURI"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="dcterms:title"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="void:sparqlEndpoint"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:basisOfRecord"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:catalogNumber"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:class"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:country"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:decimalLatitude"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:decimalLongitude"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:eventDate"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:family"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:genus"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:individualCount"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:kingdom"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:locality"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:locationID"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:maximumDepthInMeters"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:minimumDepthInMeters"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:occurrenceID"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:occurrenceRemarks"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:organismID"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:organismName"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:phylum"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:scientificName"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:scientificNameAuthorship"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:sex"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:specificEpithet"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:stateProvince"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:verbatimCoordinates"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:verbatimEventDate"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:verbatimLatitude"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:verbatimLongitude"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://rs.tdwg.org/dwc/terms/dwc:waterBody"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="geo-pos:lat"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="geo-pos:long"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="foaf:name"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <AbbreviatedIRI>envo:ENVO_00000428</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Definition taken from ENVO ontology.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>envo:ENVO_00000428</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Biome</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>envo:ENVO_00000428</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Models an ecosystem to which resident ecological communities have developed adaptations</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>envo:ENVO_00000428</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">http://purl.obolibrary.org/obo/ENVO_00000428</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <AbbreviatedIRI>envo:ENVO_00002297</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Definition taken from ENVO ontology.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>envo:ENVO_00002297</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">For material entities which determine an environmental system.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>envo:ENVO_00002297</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">enviromental feature</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>envo:ENVO_00002297</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">http://purl.obolibrary.org/obo/ENVO_00002297</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <AbbreviatedIRI>envo:ENVO_00010483</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Definition taken from ENVO ontology.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>envo:ENVO_00010483</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Describes portions of environmental materials that are a fiat object which forms the medium or part of the medium of an environmental system</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>envo:ENVO_00010483</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">enviromental material</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>envo:ENVO_00010483</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">http://purl.obolibrary.org/obo/ENVO_00010483</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>dcterms:Location</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A spatial region or named place.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>dcterms:Location</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">http://purl.org/dc/terms/</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>dcterms:Location</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Location</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <AbbreviatedIRI>void:Dataset</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A dataset is a set of RDF triples that are published, maintained or aggregated by a single provider.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>void:Dataset</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Definition taken from VoID, an RDF Schema vocabulary for expressing metadata about RDF datasets.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>void:Dataset</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">https://www.w3.org/TR/void/</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>void:Dataset</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Dataset</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>dwciri:recordedBy</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Provides information about persons, who have recorded an occurrence. It is also reused from the DwC URI namespace and enables non-literal ranges for its analoguos with DwC http://tdwg.github.io/dwc/terms/index.htm#recordedBy .</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>dwciri:recordedBy</AbbreviatedIRI>
+        <AbbreviatedIRI>dwciri:</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>dwciri:recordedBy</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">recorded by</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>http://rs.tdwg.org/dwc/terms/dwc:Event</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Term extracted from the Darwin Core vocabulary.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://rs.tdwg.org/dwc/terms/dwc:Event</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Sampling protocols and methods, date, time, field notes, etc.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://rs.tdwg.org/dwc/terms/dwc:Event</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Event</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>http://rs.tdwg.org/dwc/terms/dwc:Event</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">http://rs.tdwg.org/dwc/terms/#eventindex</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>http://rs.tdwg.org/dwc/terms/dwc:Occurrence</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Term extracted from the Darwin Core vocabulary.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://rs.tdwg.org/dwc/terms/dwc:Occurrence</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Evidence of species in nature, observers, behavior, associated media, references, etc.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://rs.tdwg.org/dwc/terms/dwc:Occurrence</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Occurrence</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>http://rs.tdwg.org/dwc/terms/dwc:Occurrence</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">http://rs.tdwg.org/dwc/terms/#Occurrence</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>http://rs.tdwg.org/dwc/terms/dwc:Organism</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Term extracted from the Darwin Core vocabulary.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://rs.tdwg.org/dwc/terms/dwc:Organism</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A particular organism or defined group of organisms considered to be taxonomically homogeneous.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://rs.tdwg.org/dwc/terms/dwc:Organism</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Organism</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>http://rs.tdwg.org/dwc/terms/dwc:Organism</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">http://rs.tdwg.org/dwc/terms/#Organism</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>http://rs.tdwg.org/dwc/terms/dwc:Taxon</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Term extracted from the Darwin Core vocabulary.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://rs.tdwg.org/dwc/terms/dwc:Taxon</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Scientific names, vernacular names, names usages, taxon concepts, and the relationship between them</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://rs.tdwg.org/dwc/terms/dwc:Taxon</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Taxon</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>http://rs.tdwg.org/dwc/terms/dwc:Taxon</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">http://tdwg.github.io/dwc/terms/index.htm#Taxon</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/creator"/>
+        <IRI>BioEvent</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Marcos Zarate, German Braun</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>BioEvent</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Defined for specializing events associated to biodiversity and biogeography.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>BioEvent</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">BioEvent</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/creator"/>
+        <IRI>Environment</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Marcos Zarate, German Braun</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>Environment</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Allows describe the environment inhabited by a particular individual for example a bird, we would describe the material ENVO_00010483 as “air” , the feature ENVO_00002297 as “flood meadow” , and the biome ENVO_00000428 as “flooded grassland biome”.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Environment</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Enviroment</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/creator"/>
+        <IRI>Region</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Marcos Zarate, German Braun</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>Region</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Describe an area delimited by a latitude and longitude</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Region</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Region</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/creator"/>
+        <IRI>associated</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Marcos Zarate, German Braun</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>associated</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Each occurrence is described based on an existence of an organism</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>associated</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">associated</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/creator"/>
+        <IRI>belongsTo</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Marcos Zarate, German Braun</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>belongsTo</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Links a subject Taxon instance to an object Organism instance.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>belongsTo</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">belongs to</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/creator"/>
+        <IRI>byBiome</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Marcos Zarate, German Braun</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>byBiome</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">An environment is described by a biome (ENVO 00000428) through byBiome. The byBiome relationship is one-to-one.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>byBiome</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">by biome</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/creator"/>
+        <IRI>byFeature</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Marcos Zarate, German Braun</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>byFeature</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">An environment is described by an environmental feature (ENVO_00002297) through byFeature. The byFeature relationship is one-to-one.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>byFeature</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">by feature</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/creator"/>
+        <IRI>byMaterial</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Marcos Zarate, German Braun</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>byMaterial</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">An environment is described by an environmental material (ENVO_00010483) through byMaterial. The byMaterial relationship is one-to-one.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>byMaterial</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">by material</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/creator"/>
+        <IRI>caraterizes</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Marcos Zarate, German Braun</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>caraterizes</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Relationship that exists between environment and region. In this context an environment characterizes a region. The caracterizes relationship is one-to-one.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>caraterizes</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">caracterizes</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/creator"/>
+        <IRI>has_event</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Marcos Zarate, German Braun</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>has_event</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Relation that exists between an occurrence and an event. The has_event relationship is one-to-one.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>has_event</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">has event</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/creator"/>
+        <IRI>has_location</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Marcos Zarate, German Braun</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>has_location</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Relationship that exists between an event and location, this relationship is many-to-one (many locations at one event)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>has_location</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">has location</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/creator"/>
+        <IRI>memberOf</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Marcos Zarate, German Braun</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>memberOf</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Link occurrences to a Dataset. It is a many-to-one relationship. (A Dataset  have many occurrences associated with it))</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>memberOf</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">member of</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <AbbreviatedIRI>foaf:Person</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Persons who have recorded an occurrence.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>foaf:Person</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Definition taken from FOAF vocabulary</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>foaf:Person</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">http://xmlns.com/foaf/spec/#term_Person</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>foaf:Person</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Person</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.2.5.20160517-0735) https://github.com/owlcs/owlapi -->
+
