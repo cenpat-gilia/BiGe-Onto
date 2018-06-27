@@ -4,4 +4,4 @@ BiGe-Onto is an Ontology-Based System for Managing Biodiversity and Biogeography
 
 The proposed system enables interoperability and a common knowledge representation among databases [GBIF](https://www.gbif.org/) and [OBIS](http://www.iobis.org/), allowing the retrieval of information that cannot be gathered by any of the individual information sources alone. 
 
-To know the details of its development, we invite you to give a tour by our wiki, clicking [here](https://github.com/cenpat-gilia/BioOnto/wiki).
+To know the details of its development, we invite you to give a tour by our wiki, clicking [here](https://github.com/cenpat-gilia/BiGe-Onto/wiki).
