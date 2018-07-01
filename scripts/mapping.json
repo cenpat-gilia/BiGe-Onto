@@ -1,9 +1,13 @@
- {
+  {
     "op": "rdf-extension/save-rdf-schema",
     "description": "Save RDF schema skeleton",
     "schema": {
-      "baseUri": "http://www.cenpat-conicet.gob.ar/ontology/",
+      "baseUri": "http://www.cenpat-conicet.gob.ar/resource/",
       "prefixes": [
+        {
+          "name": "void",
+          "uri": "http://rdfs.org/ns/void#"
+        },
         {
           "name": "owl",
           "uri": "http://www.w3.org/2002/07/owl#"
@@ -13,24 +17,12 @@
           "uri": "http://wikidata.org/prop/direct/"
         },
         {
-          "name": "bio-onto",
-          "uri": "http://cenpat-conicet.gob.ar/ontology/"
-        },
-        {
           "name": "xsd",
           "uri": "http://www.w3.org/2001/XMLSchema#"
         },
         {
-          "name": "dsw",
-          "uri": "http://purl.org/dsw/"
-        },
-        {
           "name": "rdfs",
           "uri": "http://www.w3.org/2000/01/rdf-schema#"
-        },
-        {
-          "name": "txn",
-          "uri": "http://lod.taxonconcept.org/ontology/txn.owl#"
         },
         {
           "name": "wd",
@@ -41,12 +33,12 @@
           "uri": "http://dbpedia.org/ontology/"
         },
         {
-          "name": "dwc",
-          "uri": "http://rs.tdwg.org/dwc/terms/"
+          "name": "dwciri",
+          "uri": "http://rs.tdwg.org/dwc/iri/"
         },
         {
-          "name": "geo-ont",
-          "uri": "http://www.geonames.org/ontology#"
+          "name": "dwc",
+          "uri": "http://rs.tdwg.org/dwc/terms/"
         },
         {
           "name": "rdf",
@@ -59,6 +51,10 @@
         {
           "name": "dbr",
           "uri": "http://dbpedia.org/resource/"
+        },
+        {
+          "name": "bigeonto",
+          "uri": "http://www.w3id.org/cenpat-gilia/bigeonto/"
         },
         {
           "name": "foaf",
@@ -74,7 +70,7 @@
           "nodeType": "cell-as-resource",
           "expression": "\"occurrence/\"+value.urlify()",
           "isRowNumberCell": false,
-          "columnName": "id",
+          "columnName": "UUID",
           "rdfTypes": [
             {
               "uri": "http://rs.tdwg.org/dwc/terms/Occurrence",
@@ -83,127 +79,422 @@
           ],
           "links": [
             {
-              "uri": "http://cenpat-conicet.gob.ar/ontology/has_taxon",
-              "curie": "bio-onto:has_taxon",
+              "uri": "http://www.w3id.org/cenpat-gilia/bigeonto/associated",
+              "curie": "bigeonto:associated",
               "target": {
                 "nodeType": "cell-as-resource",
-                "expression": "\"taxon/\"+cells[\"genus\"].value +\"_\"+cells[\"specificEpithet\"].value",
-                "isRowNumberCell": true,
+                "expression": "\"organism/\"+value.urlify()",
+                "isRowNumberCell": false,
+                "columnName": "UUID",
                 "rdfTypes": [
                   {
-                    "uri": "http://rs.tdwg.org/dwc/terms/Taxon",
-                    "curie": "dwc:Taxon"
+                    "uri": "http://rs.tdwg.org/dwc/terms/Organism",
+                    "curie": "dwc:Organism"
                   }
                 ],
                 "links": [
                   {
-                    "uri": "http://rs.tdwg.org/dwc/terms/class",
-                    "curie": "dwc:class",
+                    "uri": "http://www.w3id.org/cenpat-gilia/bigeonto/belongsTo",
+                    "curie": "bigeonto:belongsTo",
                     "target": {
-                      "nodeType": "cell-as-literal",
-                      "expression": "value",
+                      "nodeType": "cell-as-resource",
+                      "expression": "\"taxon/\"+cells[\"genus\"].value +\"_\"+cells[\"specificEpithet\"].value.urlify()",
                       "isRowNumberCell": false,
-                      "valueType": "http://www.w3.org/2001/XMLSchema#string",
-                      "columnName": "class"
+                      "columnName": "UUID",
+                      "rdfTypes": [
+                        {
+                          "uri": "http://rs.tdwg.org/dwc/terms/Taxon",
+                          "curie": "dwc:Taxon"
+                        }
+                      ],
+                      "links": [
+                        {
+                          "uri": "http://rs.tdwg.org/dwc/terms/class",
+                          "curie": "dwc:class",
+                          "target": {
+                            "nodeType": "cell-as-literal",
+                            "expression": "value",
+                            "isRowNumberCell": false,
+                            "valueType": "http://www.w3.org/2001/XMLSchema#string",
+                            "columnName": "class"
+                          }
+                        },
+                        {
+                          "uri": "http://rs.tdwg.org/dwc/terms/family",
+                          "curie": "dwc:family",
+                          "target": {
+                            "nodeType": "cell-as-literal",
+                            "expression": "value",
+                            "isRowNumberCell": false,
+                            "valueType": "http://www.w3.org/2001/XMLSchema#string",
+                            "columnName": "family"
+                          }
+                        },
+                        {
+                          "uri": "http://rs.tdwg.org/dwc/terms/genus",
+                          "curie": "dwc:genus",
+                          "target": {
+                            "nodeType": "cell-as-literal",
+                            "expression": "value",
+                            "isRowNumberCell": false,
+                            "valueType": "http://www.w3.org/2001/XMLSchema#string",
+                            "columnName": "genus"
+                          }
+                        },
+                        {
+                          "uri": "http://rs.tdwg.org/dwc/terms/kingdom",
+                          "curie": "dwc:kingdom",
+                          "target": {
+                            "nodeType": "cell-as-literal",
+                            "expression": "value",
+                            "isRowNumberCell": false,
+                            "valueType": "http://www.w3.org/2001/XMLSchema#string",
+                            "columnName": "kingdom"
+                          }
+                        },
+                        {
+                          "uri": "http://rs.tdwg.org/dwc/terms/order",
+                          "curie": "dwc:order",
+                          "target": {
+                            "nodeType": "cell-as-literal",
+                            "expression": "value",
+                            "isRowNumberCell": false,
+                            "valueType": "http://www.w3.org/2001/XMLSchema#string",
+                            "columnName": "order"
+                          }
+                        },
+                        {
+                          "uri": "http://rs.tdwg.org/dwc/terms/phylum",
+                          "curie": "dwc:phylum",
+                          "target": {
+                            "nodeType": "cell-as-literal",
+                            "expression": "value",
+                            "isRowNumberCell": false,
+                            "valueType": "http://www.w3.org/2001/XMLSchema#string",
+                            "columnName": "phylum"
+                          }
+                        },
+                        {
+                          "uri": "http://rs.tdwg.org/dwc/terms/scientificName",
+                          "curie": "dwc:scientificName",
+                          "target": {
+                            "nodeType": "cell-as-literal",
+                            "expression": "value",
+                            "isRowNumberCell": false,
+                            "valueType": "http://www.w3.org/2001/XMLSchema#string",
+                            "columnName": "scientificName"
+                          }
+                        },
+                        {
+                          "uri": "http://rs.tdwg.org/dwc/terms/scientificNameID",
+                          "curie": "dwc:scientificNameID",
+                          "target": {
+                            "nodeType": "cell-as-literal",
+                            "expression": "value",
+                            "isRowNumberCell": false,
+                            "valueType": "http://www.w3.org/2001/XMLSchema#string",
+                            "columnName": "eol_pages"
+                          }
+                        },
+                        {
+                          "uri": "http://rs.tdwg.org/dwc/terms/specificEpithet",
+                          "curie": "dwc:specificEpithet",
+                          "target": {
+                            "nodeType": "cell-as-literal",
+                            "expression": "value",
+                            "isRowNumberCell": false,
+                            "valueType": "http://www.w3.org/2001/XMLSchema#string",
+                            "columnName": "specificEpithet"
+                          }
+                        },
+                        {
+                          "uri": "http://rs.tdwg.org/dwc/terms/scientificNameAuthorship",
+                          "curie": "dwc:scientificNameAuthorship",
+                          "target": {
+                            "nodeType": "cell-as-literal",
+                            "expression": "value",
+                            "isRowNumberCell": false,
+                            "valueType": "http://www.w3.org/2001/XMLSchema#string",
+                            "columnName": "scientificNameAuthorship"
+                          }
+                        },
+                        {
+                          "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+                          "curie": "rdfs:label",
+                          "target": {
+                            "nodeType": "cell-as-literal",
+                            "expression": "value",
+                            "isRowNumberCell": false,
+                            "lang": "en",
+                            "columnName": "scientificName"
+                          }
+                        }
+                      ]
                     }
-                  },
+                  }
+                ]
+              }
+            },
+            {
+              "uri": "http://www.w3id.org/cenpat-gilia/bigeonto/memberOf",
+              "curie": "bigeonto:memberOf",
+              "target": {
+                "nodeType": "resource",
+                "value": "dwca-arobis-sealsi-v1.3",
+                "rdfTypes": [
                   {
-                    "uri": "http://rs.tdwg.org/dwc/terms/family",
-                    "curie": "dwc:family",
-                    "target": {
-                      "nodeType": "cell-as-literal",
-                      "expression": "value",
-                      "isRowNumberCell": false,
-                      "valueType": "http://www.w3.org/2001/XMLSchema#string",
-                      "columnName": "family"
-                    }
-                  },
-                  {
-                    "uri": "http://rs.tdwg.org/dwc/terms/genus",
-                    "curie": "dwc:genus",
-                    "target": {
-                      "nodeType": "cell-as-literal",
-                      "expression": "value",
-                      "isRowNumberCell": false,
-                      "valueType": "http://www.w3.org/2001/XMLSchema#string",
-                      "columnName": "genus"
-                    }
-                  },
-                  {
-                    "uri": "http://rs.tdwg.org/dwc/terms/kingdom",
-                    "curie": "dwc:kingdom",
-                    "target": {
-                      "nodeType": "cell-as-literal",
-                      "expression": "value",
-                      "isRowNumberCell": false,
-                      "valueType": "http://www.w3.org/2001/XMLSchema#string",
-                      "columnName": "kingdom"
-                    }
-                  },
-                  {
-                    "uri": "http://rs.tdwg.org/dwc/terms/order",
-                    "curie": "dwc:order",
-                    "target": {
-                      "nodeType": "cell-as-literal",
-                      "expression": "value",
-                      "isRowNumberCell": false,
-                      "valueType": "http://www.w3.org/2001/XMLSchema#string",
-                      "columnName": "order"
-                    }
-                  },
-                  {
-                    "uri": "http://rs.tdwg.org/dwc/terms/phylum",
-                    "curie": "dwc:phylum",
-                    "target": {
-                      "nodeType": "cell-as-literal",
-                      "expression": "value",
-                      "isRowNumberCell": false,
-                      "valueType": "http://www.w3.org/2001/XMLSchema#string",
-                      "columnName": "phylum"
-                    }
-                  },
-                  {
-                    "uri": "http://rs.tdwg.org/dwc/terms/scientificName",
-                    "curie": "dwc:scientificName",
-                    "target": {
-                      "nodeType": "cell-as-literal",
-                      "expression": "value",
-                      "isRowNumberCell": false,
-                      "valueType": "http://www.w3.org/2001/XMLSchema#string",
-                      "columnName": "scientificName"
-                    }
-                  },
-                  {
-                    "uri": "http://rs.tdwg.org/dwc/terms/scientificNameAuthorship",
-                    "curie": "dwc:scientificNameAuthorship",
-                    "target": {
-                      "nodeType": "cell-as-literal",
-                      "expression": "value",
-                      "isRowNumberCell": false,
-                      "valueType": "http://www.w3.org/2001/XMLSchema#string",
-                      "columnName": "scientificNameAuthorship"
-                    }
-                  },
-                  {
-                    "uri": "http://rs.tdwg.org/dwc/terms/specificEpithet",
-                    "curie": "dwc:specificEpithet",
-                    "target": {
-                      "nodeType": "cell-as-literal",
-                      "expression": "value",
-                      "isRowNumberCell": false,
-                      "valueType": "http://www.w3.org/2001/XMLSchema#string",
-                      "columnName": "specificEpithet"
-                    }
-                  },
+                    "uri": "http://rdfs.org/ns/void#dataset",
+                    "curie": "void:dataset"
+                  }
+                ],
+                "links": [
                   {
                     "uri": "http://www.w3.org/2000/01/rdf-schema#label",
                     "curie": "rdfs:label",
                     "target": {
+                      "nodeType": "literal",
+                      "value": "dwca-arobis-sealsi-v1.3",
+                      "lang": "en"
+                    }
+                  },
+                  {
+                    "uri": "http://purl.org/dc/terms/title",
+                    "curie": "dc:title",
+                    "target": {
+                      "nodeType": "literal",
+                      "value": "Locations of seals in Patagonian Large Marine Ecosystem (OBIS South America, AR-OBIS, Sub-node)",
+                      "lang": "en"
+                    }
+                  },
+                  {
+                    "uri": "http://purl.org/dc/terms/abstract",
+                    "curie": "dc:abstract",
+                    "target": {
+                      "nodeType": "literal",
+                      "value": "Distribution of three species of pinnipeds that breed along the Patagonian coast of Argentina and Chile. Coastal and at sea locations of South American sea lion (Otaria flavescens), fur seals (Arctocephalus australis) and southern elephant seals (Mirounga leonina) were collected during different research projects developed at Centro Nacional Patagónico, Puerto Madryn, Argentina. Information before 1990 comes from published papers. Surveys along the coast were carried out during the implementation of the Patagonian Coastal Zone Management Plan 1992-1996 (Fundación Patagonia Natural and Wildlife Conservation Society - GEF-UNDP). Locations at sea are foraging trips for seals equipped with Argos-linked Platform Transmitter Terminals (PTTs) and Satellite Dive Recorders (SDRs).",
+                      "lang": "en"
+                    }
+                  },
+                  {
+                    "uri": "http://purl.org/dc/terms/identifier",
+                    "curie": "dc:identifier",
+                    "target": {
+                      "nodeType": "literal",
+                      "value": "http://arobis.cenpat-conicet.gob.ar:8081/resource?r=arobis-sealsi",
+                      "valueType": "http://www.w3.org/2001/XMLSchema#string"
+                    }
+                  },
+                  {
+                    "uri": "http://rs.tdwg.org/dwc/terms/datasetName",
+                    "curie": "dwc:datasetName",
+                    "target": {
+                      "nodeType": "literal",
+                      "value": "dwca-arobis-sealsi-v1.3",
+                      "valueType": "http://www.w3.org/2001/XMLSchema#string"
+                    }
+                  },
+                  {
+                    "uri": "http://rs.tdwg.org/dwc/terms/institutionCode",
+                    "curie": "dwc:institutionCode",
+                    "target": {
+                      "nodeType": "cell-as-resource",
+                      "expression": "\"organization/\"+value.urlify()",
+                      "isRowNumberCell": false,
+                      "columnName": "institutionCode",
+                      "rdfTypes": [
+                        {
+                          "uri": "http://xmlns.com/foaf/0.1/Organization",
+                          "curie": "foaf:Organization"
+                        }
+                      ],
+                      "links": [
+                        {
+                          "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+                          "curie": "rdfs:label",
+                          "target": {
+                            "nodeType": "cell-as-literal",
+                            "expression": "value",
+                            "isRowNumberCell": false,
+                            "lang": "en",
+                            "columnName": "institutionCode"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "uri": "http://rs.tdwg.org/dwc/iri/recordedBy",
+              "curie": "dwciri:recordedBy",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "\"person/\"+value.urlify()",
+                "isRowNumberCell": false,
+                "columnName": "recordedBy",
+                "rdfTypes": [
+                  {
+                    "uri": "http://xmlns.com/foaf/0.1/Person",
+                    "curie": "foaf:Person"
+                  }
+                ],
+                "links": [
+                  {
+                    "uri": "http://xmlns.com/foaf/0.1/name",
+                    "curie": "foaf:name",
+                    "target": {
                       "nodeType": "cell-as-literal",
                       "expression": "value",
                       "isRowNumberCell": false,
-                      "lang": "en",
-                      "columnName": "scientificName"
+                      "valueType": "http://www.w3.org/2001/XMLSchema#string",
+                      "columnName": "recordedBy"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "uri": "http://www.w3id.org/cenpat-gilia/bigeonto/has_event",
+              "curie": "bigeonto:has_event",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "expression": "\"bioevent/\"+value.urlify()",
+                "isRowNumberCell": false,
+                "columnName": "UUID",
+                "rdfTypes": [
+                  {
+                    "uri": "http://www.w3id.org/cenpat-gilia/bigeonto/BioEvent",
+                    "curie": "bigeonto:BioEvent"
+                  }
+                ],
+                "links": [
+                  {
+                    "uri": "http://www.w3id.org/cenpat-gilia/bigeonto/has_location",
+                    "curie": "bigeonto:has_location",
+                    "target": {
+                      "nodeType": "cell-as-resource",
+                      "expression": "\"location/\"+value.urlify()",
+                      "isRowNumberCell": false,
+                      "columnName": "UUID",
+                      "rdfTypes": [
+                        {
+                          "uri": "http://purl.org/dc/terms/Location",
+                          "curie": "dc:Location"
+                        }
+                      ],
+                      "links": [
+                        {
+                          "uri": "http://rs.tdwg.org/dwc/terms/country",
+                          "curie": "dwc:country",
+                          "target": {
+                            "nodeType": "cell-as-literal",
+                            "expression": "value",
+                            "isRowNumberCell": false,
+                            "valueType": "http://www.w3.org/2001/XMLSchema#string",
+                            "columnName": "country"
+                          }
+                        },
+                        {
+                          "uri": "http://rs.tdwg.org/dwc/terms/decimalLatitude",
+                          "curie": "dwc:decimalLatitude",
+                          "target": {
+                            "nodeType": "cell-as-literal",
+                            "expression": "value",
+                            "isRowNumberCell": false,
+                            "valueType": "http://www.w3.org/2001/XMLSchema#decimal",
+                            "columnName": "decimalLatitude"
+                          }
+                        },
+                        {
+                          "uri": "http://www.w3.org/2003/01/geo/wgs84_pos#lat",
+                          "curie": "geo-pos:lat",
+                          "target": {
+                            "nodeType": "cell-as-literal",
+                            "expression": "value",
+                            "isRowNumberCell": false,
+                            "valueType": "http://www.w3.org/2001/XMLSchema#decimal",
+                            "columnName": "decimalLatitude"
+                          }
+                        },
+                        {
+                          "uri": "http://rs.tdwg.org/dwc/terms/decimalLongitude",
+                          "curie": "dwc:decimalLongitude",
+                          "target": {
+                            "nodeType": "cell-as-literal",
+                            "expression": "value",
+                            "isRowNumberCell": false,
+                            "valueType": "http://www.w3.org/2001/XMLSchema#decimal",
+                            "columnName": "decimalLongitude"
+                          }
+                        },
+                        {
+                          "uri": "http://www.w3.org/2003/01/geo/wgs84_pos#long",
+                          "curie": "geo-pos:long",
+                          "target": {
+                            "nodeType": "cell-as-literal",
+                            "expression": "value",
+                            "isRowNumberCell": false,
+                            "valueType": "http://www.w3.org/2001/XMLSchema#decimal",
+                            "columnName": "decimalLongitude"
+                          }
+                        },
+                        {
+                          "uri": "http://rs.tdwg.org/dwc/terms/locality",
+                          "curie": "dwc:locality",
+                          "target": {
+                            "nodeType": "cell-as-literal",
+                            "expression": "value",
+                            "isRowNumberCell": false,
+                            "valueType": "http://www.w3.org/2001/XMLSchema#string",
+                            "columnName": "locality"
+                          }
+                        },
+                        {
+                          "uri": "http://rs.tdwg.org/dwc/terms/maximumDepthInMeters",
+                          "curie": "dwc:maximumDepthInMeters",
+                          "target": {
+                            "nodeType": "cell-as-literal",
+                            "expression": "value",
+                            "isRowNumberCell": false,
+                            "valueType": "http://www.w3.org/2001/XMLSchema#integer",
+                            "columnName": "minimumDepthInMeters"
+                          }
+                        },
+                        {
+                          "uri": "http://rs.tdwg.org/dwc/terms/stateProvince",
+                          "curie": "dwc:stateProvince",
+                          "target": {
+                            "nodeType": "cell-as-literal",
+                            "expression": "value",
+                            "isRowNumberCell": false,
+                            "valueType": "http://www.w3.org/2001/XMLSchema#string",
+                            "columnName": "stateProvince"
+                          }
+                        },
+                        {
+                          "uri": "http://rs.tdwg.org/dwc/terms/waterBody",
+                          "curie": "dwc:waterBody",
+                          "target": {
+                            "nodeType": "cell-as-literal",
+                            "expression": "value",
+                            "isRowNumberCell": false,
+                            "valueType": "http://www.w3.org/2001/XMLSchema#string",
+                            "columnName": "waterBody"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "uri": "http://rs.tdwg.org/dwc/terms/eventDate",
+                    "curie": "dwc:eventDate",
+                    "target": {
+                      "nodeType": "cell-as-literal",
+                      "expression": "value.toString(\"dd/MM/YYYY\")",
+                      "isRowNumberCell": false,
+                      "valueType": "http://www.w3.org/2001/XMLSchema#date",
+                      "columnName": "verbatimeventDate"
                     }
                   }
                 ]
@@ -249,228 +540,41 @@
                 "nodeType": "cell-as-literal",
                 "expression": "value",
                 "isRowNumberCell": false,
-                "valueType": "http://www.w3.org/2001/XMLSchema#int",
+                "valueType": "http://www.w3.org/2001/XMLSchema#integer",
                 "columnName": "individualCount"
               }
             },
             {
-              "uri": "http://rs.tdwg.org/dwc/terms/institutionCode",
-              "curie": "dwc:institutionCode",
-              "target": {
-                "nodeType": "cell-as-resource",
-                "expression": "\"agent/\"+value.urlify()",
-                "isRowNumberCell": false,
-                "columnName": "institutionCode",
-                "rdfTypes": [
-                  {
-                    "uri": "http://xmlns.com/foaf/0.1/Agent",
-                    "curie": "foaf:Agent"
-                  }
-                ],
-                "links": [
-                  {
-                    "uri": "http://xmlns.com/foaf/0.1/name",
-                    "curie": "foaf:name",
-                    "target": {
-                      "nodeType": "cell-as-literal",
-                      "expression": "value",
-                      "isRowNumberCell": false,
-                      "lang": "en",
-                      "columnName": "institutionCode"
-                    }
-                  }
-                ]
-              }
-            },
-            {
-              "uri": "http://rs.tdwg.org/dwc/terms/occurrenceRemarks",
-              "curie": "dwc:occurrenceRemarks",
+              "uri": "http://rs.tdwg.org/dwc/terms/sex",
+              "curie": "dwc:sex",
               "target": {
                 "nodeType": "cell-as-literal",
                 "expression": "value",
                 "isRowNumberCell": false,
                 "valueType": "http://www.w3.org/2001/XMLSchema#string",
-                "columnName": "occurrenceRemarks"
+                "columnName": "sex"
               }
             },
             {
-              "uri": "http://cenpat-conicet.gob.ar/ontology/recorded_by",
-              "curie": "bio-onto:recorded_by",
+              "uri": "http://www.w3.org/2000/01/rdf-schema#label",
+              "curie": "rdfs:label",
               "target": {
-                "nodeType": "cell-as-resource",
-                "expression": "if(value == null,\"_:bnode\",\"agent/\"+value.urlify())",
+                "nodeType": "cell-as-literal",
+                "expression": "value",
                 "isRowNumberCell": false,
-                "columnName": "recordedBy",
-                "rdfTypes": [
-                  {
-                    "uri": "http://xmlns.com/foaf/0.1/Agent",
-                    "curie": "foaf:Agent"
-                  }
-                ],
-                "links": [
-                  {
-                    "uri": "http://xmlns.com/foaf/0.1/name",
-                    "curie": "foaf:name",
-                    "target": {
-                      "nodeType": "cell-as-literal",
-                      "expression": "value+\"@es\"",
-                      "isRowNumberCell": false,
-                      "lang": "en",
-                      "columnName": "recordedBy"
-                    }
-                  }
-                ]
+                "lang": "en",
+                "columnName": "UUID"
               }
             },
             {
-              "uri": "http://wikidata.org/prop/direct/p21",
-              "curie": "wdt:p21",
+              "uri": "http://purl.org/dc/terms/bibliographicCitation",
+              "curie": "dc:bibliographicCitation",
               "target": {
-                "nodeType": "cell-as-resource",
-                "expression": "if(value == \"M\",\"http://www.wikidata.org/entity/Q44148\",if(value == \"F\",\"http://www.wikidata.org/entity/Q43445\",\"http://www.wikidata.org/entity/Q99999\"))\n\n\n\"http://www.wikidata.org/entity/Q43445\")",
+                "nodeType": "cell-as-literal",
+                "expression": "value",
                 "isRowNumberCell": false,
-                "columnName": "sex",
-                "rdfTypes": [],
-                "links": []
-              }
-            },
-            {
-              "uri": "http://cenpat-conicet.gob.ar/ontology/has_event",
-              "curie": "bio-onto:has_event",
-              "target": {
-                "nodeType": "cell-as-resource",
-                "expression": "\"event/\"+value.urlify()",
-                "isRowNumberCell": false,
-                "columnName": "id",
-                "rdfTypes": [
-                  {
-                    "uri": "http://rs.tdwg.org/dwc/terms/Event",
-                    "curie": "dwc:Event"
-                  }
-                ],
-                "links": [
-                  {
-                    "uri": "http://cenpat-conicet.gob.ar/ontology/has_location",
-                    "curie": "bio-onto:has_location",
-                    "target": {
-                      "nodeType": "cell-as-resource",
-                      "expression": "\"location/\"+value.urlify()",
-                      "isRowNumberCell": false,
-                      "columnName": "id",
-                      "rdfTypes": [
-                        {
-                          "uri": "http://purl.org/dc/terms/Location",
-                          "curie": "dc:Location"
-                        }
-                      ],
-                      "links": [
-                        {
-                          "uri": "http://rs.tdwg.org/dwc/terms/georeferenceRemarks",
-                          "curie": "dwc:georeferenceRemarks",
-                          "target": {
-                            "nodeType": "cell-as-literal",
-                            "expression": "value",
-                            "isRowNumberCell": false,
-                            "valueType": "http://www.w3.org/2001/XMLSchema#string",
-                            "columnName": "georeferenceRemarks"
-                          }
-                        },
-                        {
-                          "uri": "http://rs.tdwg.org/dwc/terms/locality",
-                          "curie": "dwc:locality",
-                          "target": {
-                            "nodeType": "cell-as-literal",
-                            "expression": "value",
-                            "isRowNumberCell": false,
-                            "valueType": "http://www.w3.org/2001/XMLSchema#string",
-                            "columnName": "locality"
-                          }
-                        },
-                        {
-                          "uri": "http://rs.tdwg.org/dwc/terms/stateProvince",
-                          "curie": "dwc:stateProvince",
-                          "target": {
-                            "nodeType": "cell-as-literal",
-                            "expression": "value",
-                            "isRowNumberCell": false,
-                            "valueType": "http://www.w3.org/2001/XMLSchema#string",
-                            "columnName": "stateProvince"
-                          }
-                        },
-                        {
-                          "uri": "http://www.w3.org/2003/01/geo/wgs84_pos#lat",
-                          "curie": "geo-pos:lat",
-                          "target": {
-                            "nodeType": "cell-as-literal",
-                            "expression": "value",
-                            "isRowNumberCell": false,
-                            "valueType": "http://www.w3.org/2001/XMLSchema#decimal",
-                            "columnName": "decimalLatitude"
-                          }
-                        },
-                        {
-                          "uri": "http://www.w3.org/2003/01/geo/wgs84_pos#long",
-                          "curie": "geo-pos:long",
-                          "target": {
-                            "nodeType": "cell-as-literal",
-                            "expression": "value",
-                            "isRowNumberCell": false,
-                            "valueType": "http://www.w3.org/2001/XMLSchema#decimal",
-                            "columnName": "decimalLongitude"
-                          }
-                        },
-                        {
-                          "uri": "http://www.geonames.org/ontology#countryCode",
-                          "curie": "geo-ont:countryCode",
-                          "target": {
-                            "nodeType": "cell-as-literal",
-                            "expression": "value",
-                            "isRowNumberCell": false,
-                            "valueType": "http://www.w3.org/2001/XMLSchema#string",
-                            "columnName": "country"
-                          }
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "uri": "http://rs.tdwg.org/dwc/terms/eventDate",
-                    "curie": "dwc:eventDate",
-                    "target": {
-                      "nodeType": "cell-as-literal",
-                      "expression": "value",
-                      "isRowNumberCell": false,
-                      "valueType": "http://www.w3.org/2001/XMLSchema#string",
-                      "columnName": "eventDate"
-                    }
-                  },
-                  {
-                    "uri": "http://rs.tdwg.org/dwc/terms/verbatimEventDate",
-                    "curie": "dwc:verbatimEventDate",
-                    "target": {
-                      "nodeType": "cell-as-literal",
-                      "expression": "value.toString( \"yyyy-MM-dd\" )",
-                      "isRowNumberCell": false,
-                      "valueType": "http://www.w3.org/2001/XMLSchema#date",
-                      "columnName": "verbatimEventDate"
-                    }
-                  }
-                ]
-              }
-            },
-            {
-              "uri": "http://cenpat-conicet.gob.ar/ontology/is_part_of",
-              "curie": "bio-onto:is_part_of",
-              "target": {
-                "nodeType": "resource",
-                "value": "http://cenpat-conicet.gob.ar/ontology/dataset/dwca-mamcenpat-v1.1",
-                "rdfTypes": [
-                  {
-                    "uri": "http://rs.tdwg.org/dwc/terms/dataset",
-                    "curie": "dwc:dataset"
-                  }
-                ],
-                "links": []
+                "valueType": "http://www.w3.org/2001/XMLSchema#string",
+                "columnName": "bibliographicCitation"
               }
             }
           ]
