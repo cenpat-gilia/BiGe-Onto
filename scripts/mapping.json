@@ -1,3 +1,4 @@
+[
   {
     "op": "rdf-extension/save-rdf-schema",
     "description": "Save RDF schema skeleton",
@@ -41,6 +42,14 @@
           "uri": "http://rs.tdwg.org/dwc/terms/"
         },
         {
+          "name": "geosparql",
+          "uri": "http://www.opengis.net/ont/geosparql#"
+        },
+        {
+          "name": "sf",
+          "uri": "http://www.opengis.net/ont/sf#"
+        },
+        {
           "name": "rdf",
           "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
         },
@@ -70,7 +79,7 @@
           "nodeType": "cell-as-resource",
           "expression": "\"occurrence/\"+value.urlify()",
           "isRowNumberCell": false,
-          "columnName": "UUID",
+          "columnName": "id",
           "rdfTypes": [
             {
               "uri": "http://rs.tdwg.org/dwc/terms/Occurrence",
@@ -85,7 +94,7 @@
                 "nodeType": "cell-as-resource",
                 "expression": "\"organism/\"+value.urlify()",
                 "isRowNumberCell": false,
-                "columnName": "UUID",
+                "columnName": "id",
                 "rdfTypes": [
                   {
                     "uri": "http://rs.tdwg.org/dwc/terms/Organism",
@@ -100,7 +109,7 @@
                       "nodeType": "cell-as-resource",
                       "expression": "\"taxon/\"+cells[\"genus\"].value +\"_\"+cells[\"specificEpithet\"].value.urlify()",
                       "isRowNumberCell": false,
-                      "columnName": "UUID",
+                      "columnName": "id",
                       "rdfTypes": [
                         {
                           "uri": "http://rs.tdwg.org/dwc/terms/Taxon",
@@ -193,7 +202,7 @@
                             "expression": "value",
                             "isRowNumberCell": false,
                             "valueType": "http://www.w3.org/2001/XMLSchema#string",
-                            "columnName": "eol_pages"
+                            "columnName": "scientificNameID"
                           }
                         },
                         {
@@ -240,7 +249,7 @@
               "curie": "bigeonto:memberOf",
               "target": {
                 "nodeType": "resource",
-                "value": "dwca-arobis-sealsi-v1.3",
+                "value": "http://www.cenpat-conicet.gob.ar/resource/dataset/dwca-argentina-cenpat-fishes-v1.11",
                 "rdfTypes": [
                   {
                     "uri": "http://rdfs.org/ns/void#dataset",
@@ -253,7 +262,7 @@
                     "curie": "rdfs:label",
                     "target": {
                       "nodeType": "literal",
-                      "value": "dwca-arobis-sealsi-v1.3",
+                      "value": "dwca-argentina-cenpat-fishes-v1.11",
                       "lang": "en"
                     }
                   },
@@ -262,7 +271,7 @@
                     "curie": "dc:title",
                     "target": {
                       "nodeType": "literal",
-                      "value": "Locations of seals in Patagonian Large Marine Ecosystem (OBIS South America, AR-OBIS, Sub-node)",
+                      "value": "Fishes in the Argentine Sea from 1967 to the present time",
                       "lang": "en"
                     }
                   },
@@ -271,7 +280,7 @@
                     "curie": "dc:abstract",
                     "target": {
                       "nodeType": "literal",
-                      "value": "Distribution of three species of pinnipeds that breed along the Patagonian coast of Argentina and Chile. Coastal and at sea locations of South American sea lion (Otaria flavescens), fur seals (Arctocephalus australis) and southern elephant seals (Mirounga leonina) were collected during different research projects developed at Centro Nacional Patagónico, Puerto Madryn, Argentina. Information before 1990 comes from published papers. Surveys along the coast were carried out during the implementation of the Patagonian Coastal Zone Management Plan 1992-1996 (Fundación Patagonia Natural and Wildlife Conservation Society - GEF-UNDP). Locations at sea are foraging trips for seals equipped with Argos-linked Platform Transmitter Terminals (PTTs) and Satellite Dive Recorders (SDRs).",
+                      "value": "Dataset based on the data obtained during fishery research cruises in the Argentine Sea between 1966 and the present time. Numerous fishery research trips have been made in the Argentine sea during the last 40 years. The aim of this database was to collect all the observational data of the different fish species since 1966 to be displayed together.",
                       "lang": "en"
                     }
                   },
@@ -280,7 +289,7 @@
                     "curie": "dc:identifier",
                     "target": {
                       "nodeType": "literal",
-                      "value": "http://arobis.cenpat-conicet.gob.ar:8081/resource?r=arobis-sealsi",
+                      "value": "http://arobis.cenpat-conicet.gob.ar:8081/resource?r=argentina-cenpat-fishes",
                       "valueType": "http://www.w3.org/2001/XMLSchema#string"
                     }
                   },
@@ -289,7 +298,7 @@
                     "curie": "dwc:datasetName",
                     "target": {
                       "nodeType": "literal",
-                      "value": "dwca-arobis-sealsi-v1.3",
+                      "value": "dwca-argentina-cenpat-fishes-v1.11",
                       "valueType": "http://www.w3.org/2001/XMLSchema#string"
                     }
                   },
@@ -317,6 +326,31 @@
                             "isRowNumberCell": false,
                             "lang": "en",
                             "columnName": "institutionCode"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "uri": "http://www.opengis.net/ont/geosparql#hasGeometry",
+                    "curie": "geosparql:hasGeometry",
+                    "target": {
+                      "nodeType": "resource",
+                      "value": "http://www.cenpat-conicet.gob.ar/resource/polygon/dwca-argentina-cenpat-fishes-v1.11",
+                      "rdfTypes": [
+                        {
+                          "uri": "http://www.opengis.net/ont/sf#Polygon",
+                          "curie": "sf:Polygon"
+                        }
+                      ],
+                      "links": [
+                        {
+                          "uri": "http://www.opengis.net/ont/geosparql#asWKT",
+                          "curie": "geosparql:asWKT",
+                          "target": {
+                            "nodeType": "literal",
+                            "value": "POLYGON((-84.18545568506909 -31.581469229262538,-38.83389318506909 -31.581469229262538,-38.83389318506909 -55.53057964293251,-84.18545568506909 -55.53057964293251,-84.18545568506909 -31.581469229262538))",
+                            "valueType": "http://www.opengis.net/ont/geosparql#wktLiteral"
                           }
                         }
                       ]
@@ -361,7 +395,7 @@
                 "nodeType": "cell-as-resource",
                 "expression": "\"bioevent/\"+value.urlify()",
                 "isRowNumberCell": false,
-                "columnName": "UUID",
+                "columnName": "id",
                 "rdfTypes": [
                   {
                     "uri": "http://www.w3id.org/cenpat-gilia/bigeonto/BioEvent",
@@ -376,7 +410,7 @@
                       "nodeType": "cell-as-resource",
                       "expression": "\"location/\"+value.urlify()",
                       "isRowNumberCell": false,
-                      "columnName": "UUID",
+                      "columnName": "id",
                       "rdfTypes": [
                         {
                           "uri": "http://purl.org/dc/terms/Location",
@@ -482,6 +516,46 @@
                             "valueType": "http://www.w3.org/2001/XMLSchema#string",
                             "columnName": "waterBody"
                           }
+                        },
+                        {
+                          "uri": "http://rs.tdwg.org/dwc/terms/minimumDepthInMeters",
+                          "curie": "dwc:minimumDepthInMeters",
+                          "target": {
+                            "nodeType": "cell-as-literal",
+                            "expression": "value",
+                            "isRowNumberCell": false,
+                            "valueType": "http://www.w3.org/2001/XMLSchema#integer",
+                            "columnName": "minimumDepthInMeters"
+                          }
+                        },
+                        {
+                          "uri": "http://www.opengis.net/ont/geosparql#hasGeometry",
+                          "curie": "geosparql:hasGeometry",
+                          "target": {
+                            "nodeType": "cell-as-resource",
+                            "expression": "\"point/\"+value.urlify()",
+                            "isRowNumberCell": false,
+                            "columnName": "id",
+                            "rdfTypes": [
+                              {
+                                "uri": "http://www.opengis.net/ont/sf#Point",
+                                "curie": "sf:Point"
+                              }
+                            ],
+                            "links": [
+                              {
+                                "uri": "http://www.opengis.net/ont/geosparql#asWKT",
+                                "curie": "geosparql:asWKT",
+                                "target": {
+                                  "nodeType": "cell-as-literal",
+                                  "expression": "\"POINT(\"+ cells[\"decimalLongitude\"].value+\" \"+cells[\"decimalLatitude\"].value+\" )\"",
+                                  "isRowNumberCell": false,
+                                  "valueType": "http://www.opengis.net/ont/geosparql#wktLiteral",
+                                  "columnName": "decimalLongitude"
+                                }
+                              }
+                            ]
+                          }
                         }
                       ]
                     }
@@ -563,18 +637,7 @@
                 "expression": "value",
                 "isRowNumberCell": false,
                 "lang": "en",
-                "columnName": "UUID"
-              }
-            },
-            {
-              "uri": "http://purl.org/dc/terms/bibliographicCitation",
-              "curie": "dc:bibliographicCitation",
-              "target": {
-                "nodeType": "cell-as-literal",
-                "expression": "value",
-                "isRowNumberCell": false,
-                "valueType": "http://www.w3.org/2001/XMLSchema#string",
-                "columnName": "bibliographicCitation"
+                "columnName": "id"
               }
             }
           ]
@@ -589,3 +652,4 @@
       ]
     }
   }
+]
